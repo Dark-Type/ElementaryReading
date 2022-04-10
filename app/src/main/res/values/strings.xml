@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ElementaryReading</string>
+    <string name="settings">settings_button</string>
+    <string name="play">play_button</string>
+    <string name="rerun">rerun_button</string>
+    <string name="stars">stars</string>
 </resources>
