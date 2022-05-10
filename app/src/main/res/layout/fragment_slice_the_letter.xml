@@ -37,7 +37,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/slice_the_button_background">
+            android:background="@drawable/slice_the_letter_background">
 
 
             <ImageButton
@@ -46,6 +46,7 @@
                 android:layout_height="0dp"
                 android:background="@null"
                 app:layout_constraintBottom_toTopOf="@+id/guideline57"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/guideline60"
                 app:layout_constraintStart_toStartOf="@+id/guideline59"
                 app:layout_constraintTop_toTopOf="@+id/guideline58"

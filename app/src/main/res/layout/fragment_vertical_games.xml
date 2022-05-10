@@ -41,17 +41,6 @@
             android:layout_height="match_parent">
 
 
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="450dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_guess_the_letter_rect" />
-
             <ImageButton
                 android:id="@+id/imageButton7"
                 android:layout_width="0dp"
@@ -59,6 +48,7 @@
                 android:background="@null"
                 android:scaleType="fitXY"
                 app:layout_constraintBottom_toTopOf="@+id/guideline50"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/guideline56"
                 app:layout_constraintStart_toStartOf="@+id/guideline55"
                 app:layout_constraintTop_toTopOf="@+id/guideline49"
@@ -71,6 +61,7 @@
                 android:background="@null"
                 android:scaleType="fitXY"
                 app:layout_constraintBottom_toTopOf="@+id/guideline50"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/guideline52"
                 app:layout_constraintStart_toStartOf="@+id/guideline51"
                 app:layout_constraintTop_toTopOf="@+id/guideline49"
@@ -83,6 +74,7 @@
                 android:background="@null"
                 android:scaleType="fitXY"
                 app:layout_constraintBottom_toTopOf="@+id/guideline50"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/guideline54"
                 app:layout_constraintStart_toStartOf="@+id/guideline53"
                 app:layout_constraintTop_toTopOf="@+id/guideline49"

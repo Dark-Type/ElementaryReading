@@ -37,18 +37,20 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainBackground"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/whiteBackground7"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintBottom_toTopOf="@+id/guideline69"
-                app:layout_constraintEnd_toStartOf="@+id/guideline86"
-                app:layout_constraintStart_toStartOf="@+id/guideline85"
-                app:layout_constraintTop_toTopOf="@+id/guideline70"
+                app:layout_constraintBottom_toTopOf="@+id/guessTheLetterHorizontalGuidline3"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/guessTheLetterVerticalGuidline7"
+                app:layout_constraintStart_toStartOf="@+id/guessTheLetterVerticalGuidline6"
+                app:layout_constraintTop_toTopOf="@+id/guessTheLetterHorizontalGuidline2"
                 app:srcCompat="@drawable/ic_guess_the_letter_rect" />
 
             <ImageButton
@@ -58,6 +60,7 @@
                 android:background="@null"
                 android:scaleType="fitXY"
                 app:layout_constraintBottom_toTopOf="@+id/guideline73"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/guideline88"
                 app:layout_constraintStart_toStartOf="@+id/guideline87"
                 app:layout_constraintTop_toTopOf="@+id/guideline74"
@@ -70,6 +73,7 @@
                 android:background="@null"
                 android:scaleType="fitXY"
                 app:layout_constraintBottom_toTopOf="@+id/guideline76"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/guideline88"
                 app:layout_constraintStart_toStartOf="@+id/guideline87"
                 app:layout_constraintTop_toTopOf="@+id/guideline75"
@@ -82,105 +86,112 @@
                 android:background="@null"
                 android:scaleType="fitXY"
                 app:layout_constraintBottom_toTopOf="@+id/guideline78"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/guideline88"
                 app:layout_constraintStart_toStartOf="@+id/guideline87"
                 app:layout_constraintTop_toTopOf="@+id/guideline77"
                 app:srcCompat="@drawable/ic_real_rerun_button" />
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/whiteBackground3"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintBottom_toTopOf="@+id/guideline71"
-                app:layout_constraintEnd_toStartOf="@+id/guideline86"
-                app:layout_constraintStart_toStartOf="@+id/guideline85"
-                app:layout_constraintTop_toTopOf="@+id/guideline72"
+                app:layout_constraintBottom_toTopOf="@+id/guessTheLetterHorizontalGuidline1"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/guessTheLetterVerticalGuidline7"
+                app:layout_constraintStart_toStartOf="@+id/guessTheLetterVerticalGuidline6"
+                app:layout_constraintTop_toTopOf="@+id/guessTheLetterHorizontalGuidline0"
                 app:srcCompat="@drawable/ic_guess_the_letter_rect" />
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/whiteBackground2"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintBottom_toTopOf="@+id/guideline71"
-                app:layout_constraintEnd_toStartOf="@+id/guideline84"
-                app:layout_constraintStart_toStartOf="@+id/guideline83"
-                app:layout_constraintTop_toTopOf="@+id/guideline72"
+                app:layout_constraintBottom_toTopOf="@+id/guessTheLetterHorizontalGuidline1"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/guessTheLetterVerticalGuidline5"
+                app:layout_constraintStart_toStartOf="@+id/guessTheLetterVerticalGuidline4"
+                app:layout_constraintTop_toTopOf="@+id/guessTheLetterHorizontalGuidline0"
                 app:srcCompat="@drawable/ic_guess_the_letter_rect" />
 
             <ImageView
-                android:id="@+id/imageView7"
+                android:id="@+id/whiteBackground6"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintBottom_toTopOf="@+id/guideline69"
-                app:layout_constraintEnd_toStartOf="@+id/guideline84"
-                app:layout_constraintStart_toStartOf="@+id/guideline83"
-                app:layout_constraintTop_toTopOf="@+id/guideline70"
-                app:layout_constraintVertical_bias="1.0"
+                app:layout_constraintBottom_toTopOf="@+id/guessTheLetterHorizontalGuidline3"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/guessTheLetterVerticalGuidline5"
+                app:layout_constraintStart_toStartOf="@+id/guessTheLetterVerticalGuidline4"
+                app:layout_constraintTop_toTopOf="@+id/guessTheLetterHorizontalGuidline2"
                 app:srcCompat="@drawable/ic_guess_the_letter_rect" />
 
             <ImageView
-                android:id="@+id/imageView8"
+                android:id="@+id/whiteBackground1"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintBottom_toTopOf="@+id/guideline71"
-                app:layout_constraintEnd_toStartOf="@+id/guideline82"
-                app:layout_constraintStart_toStartOf="@+id/guideline81"
-                app:layout_constraintTop_toTopOf="@+id/guideline72"
+                app:layout_constraintBottom_toTopOf="@+id/guessTheLetterHorizontalGuidline1"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/guessTheLetterVerticalGuidline3"
+                app:layout_constraintStart_toStartOf="@+id/guessTheLetterVerticalGuidline2"
+                app:layout_constraintTop_toTopOf="@+id/guessTheLetterHorizontalGuidline0"
                 app:srcCompat="@drawable/ic_guess_the_letter_rect" />
 
             <ImageView
-                android:id="@+id/imageView9"
+                android:id="@+id/whiteBackground5"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintBottom_toTopOf="@+id/guideline69"
-                app:layout_constraintEnd_toStartOf="@+id/guideline82"
-                app:layout_constraintStart_toStartOf="@+id/guideline81"
-                app:layout_constraintTop_toTopOf="@+id/guideline70"
+                app:layout_constraintBottom_toTopOf="@+id/guessTheLetterHorizontalGuidline3"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/guessTheLetterVerticalGuidline3"
+                app:layout_constraintStart_toStartOf="@+id/guessTheLetterVerticalGuidline2"
+                app:layout_constraintTop_toTopOf="@+id/guessTheLetterHorizontalGuidline2"
                 app:srcCompat="@drawable/ic_guess_the_letter_rect" />
 
             <ImageView
-                android:id="@+id/imageView10"
+                android:id="@+id/whiteBackground4"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintBottom_toTopOf="@+id/guideline69"
-                app:layout_constraintEnd_toStartOf="@+id/guideline80"
-                app:layout_constraintStart_toStartOf="@+id/guideline79"
-                app:layout_constraintTop_toTopOf="@+id/guideline70"
+                app:layout_constraintBottom_toTopOf="@+id/guessTheLetterHorizontalGuidline3"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/guessTheLetterVerticalGuidline1"
+                app:layout_constraintStart_toStartOf="@+id/guessTheLetterVerticalGuidline0"
+                app:layout_constraintTop_toTopOf="@+id/guessTheLetterHorizontalGuidline2"
                 app:srcCompat="@drawable/ic_guess_the_letter_rect" />
 
             <ImageView
-                android:id="@+id/imageView11"
+                android:id="@+id/whiteBackground0"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintBottom_toTopOf="@+id/guideline71"
-                app:layout_constraintEnd_toStartOf="@+id/guideline80"
-                app:layout_constraintStart_toStartOf="@+id/guideline79"
-                app:layout_constraintTop_toTopOf="@+id/guideline72"
+                app:layout_constraintBottom_toTopOf="@+id/guessTheLetterHorizontalGuidline1"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/guessTheLetterVerticalGuidline1"
+                app:layout_constraintStart_toStartOf="@+id/guessTheLetterVerticalGuidline0"
+                app:layout_constraintTop_toTopOf="@+id/guessTheLetterHorizontalGuidline0"
                 app:srcCompat="@drawable/ic_guess_the_letter_rect" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline69"
+                android:id="@+id/guessTheLetterHorizontalGuidline3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent="0.95" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline70"
+                android:id="@+id/guessTheLetterHorizontalGuidline2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent="0.56" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline71"
+                android:id="@+id/guessTheLetterHorizontalGuidline1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent="0.44" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline72"
+                android:id="@+id/guessTheLetterHorizontalGuidline0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -229,56 +240,56 @@
                 app:layout_constraintGuide_percent="0.915" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline79"
+                android:id="@+id/guessTheLetterVerticalGuidline0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.025" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline80"
+                android:id="@+id/guessTheLetterVerticalGuidline1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.17" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline81"
+                android:id="@+id/guessTheLetterVerticalGuidline2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.255" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline82"
+                android:id="@+id/guessTheLetterVerticalGuidline3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.4" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline83"
+                android:id="@+id/guessTheLetterVerticalGuidline4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.485" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline84"
+                android:id="@+id/guessTheLetterVerticalGuidline5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.63" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline85"
+                android:id="@+id/guessTheLetterVerticalGuidline6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.715" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline86"
+                android:id="@+id/guessTheLetterVerticalGuidline7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -297,6 +308,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.975" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 

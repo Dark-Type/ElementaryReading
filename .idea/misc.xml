@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/android_lar.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/black_background.xml" value="0.1" />
@@ -10,6 +11,7 @@
         <entry key="app/src/main/res/drawable/ellipse_3.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/first.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_awards_button.xml" value="0.3655" />
+        <entry key="app/src/main/res/drawable/ic_awards_ellipse.xml" value="0.3655" />
         <entry key="app/src/main/res/drawable/ic_guess_the_letter_rect.xml" value="0.3655" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_pause_button.xml" value="0.3655" />
@@ -31,22 +33,34 @@
         <entry key="app/src/main/res/layout-sw600dp/find_the_letter_1.xml" value="0.2955729166666667" />
         <entry key="app/src/main/res/layout-v31/activity_main.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/awards.xml" value="0.44507594094633113" />
+        <entry key="app/src/main/res/layout/awards.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/bsettings.xml" value="0.1" />
         <entry key="app/src/main/res/layout/find_a_letter_1.xml" value="0.1243209360635186" />
         <entry key="app/src/main/res/layout/find_a_letter_2.xml" value="0.1243209360635186" />
-        <entry key="app/src/main/res/layout/find_the_letter_1.xml" value="0.33466644287109376" />
+        <entry key="app/src/main/res/layout/find_the_letter_1.xml" value="0.1" />
         <entry key="app/src/main/res/layout/find_the_letter_2.xml" value="0.3132659433877374" />
         <entry key="app/src/main/res/layout/first_fragment.xml" value="0.1094833374023437" />
-        <entry key="app/src/main/res/layout/guess_the_letter.xml" value="0.37444605813383114" />
-        <entry key="app/src/main/res/layout/roulette.xml" value="0.2759704111611748" />
-        <entry key="app/src/main/res/layout/settings.xml" value="0.31524658203125" />
+        <entry key="app/src/main/res/layout/fragment_awards.xml" value="0.1006881713867187" />
+        <entry key="app/src/main/res/layout/fragment_find_the_letter.xml" value="0.22308197021484374" />
+        <entry key="app/src/main/res/layout/fragment_guess_the_letter.xml" value="0.2508941650390625" />
+        <entry key="app/src/main/res/layout/fragment_roulette.xml" value="0.3488157484266493" />
+        <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.11805265357292102" />
+        <entry key="app/src/main/res/layout/fragment_slice_the_letter.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_vertical_games.xml" value="0.11805265357292102" />
+        <entry key="app/src/main/res/layout/fragment_victory_menu.xml" value="0.18039855957031253" />
+        <entry key="app/src/main/res/layout/fragment_yes_no_menu.xml" value="0.1243209360635186" />
+        <entry key="app/src/main/res/layout/guess_the_letter.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/recycler_view_item_game.xml" value="0.2056258677041436" />
+        <entry key="app/src/main/res/layout/recycler_view_item_letter.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/roulette.xml" value="0.1312362192666436" />
+        <entry key="app/src/main/res/layout/settings.xml" value="0.1" />
         <entry key="app/src/main/res/layout/slice_the_button.xml" value="0.1243209360635186" />
-        <entry key="app/src/main/res/layout/slice_the_letter.xml" value="0.11106109619140628" />
+        <entry key="app/src/main/res/layout/slice_the_letter.xml" value="0.1" />
         <entry key="app/src/main/res/layout/tetris.xml" value="0.32650904641508116" />
         <entry key="app/src/main/res/layout/three_in_line.xml" value="0.29673304543851864" />
-        <entry key="app/src/main/res/layout/vertical_games.xml" value="0.48525010688328346" />
-        <entry key="app/src/main/res/layout/victory_menu.xml" value="0.5300399780273438" />
-        <entry key="app/src/main/res/layout/yes_no_menu.xml" value="0.23909351402696966" />
+        <entry key="app/src/main/res/layout/vertical_games.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/victory_menu.xml" value="0.13415679931640628" />
+        <entry key="app/src/main/res/layout/yes_no_menu.xml" value="0.1" />
       </map>
     </option>
   </component>
