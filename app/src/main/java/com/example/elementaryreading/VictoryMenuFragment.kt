@@ -29,17 +29,17 @@ class VictoryMenuFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         if (savedInstanceState == null) {
-            binding.imageButton3.setOnClickListener(View.OnClickListener {
+            binding.imageButton3.setOnClickListener {
                 requireActivity().onBackPressed()
-            })
-            binding.imageButton4.setOnClickListener(View.OnClickListener {
+            }
+            binding.imageButton4.setOnClickListener {
                 requireActivity().findNavController(R.id.fragmentContainerView)
                     .navigate(R.id.action_victoryMenuFragment_to_yesNoMenuFragment)
-            })
-            binding.imageButtonS.setOnClickListener(View.OnClickListener {
+            }
+            binding.imageButtonS.setOnClickListener {
                 requireActivity().findNavController(R.id.fragmentContainerView)
                     .navigate(R.id.action_victoryMenuFragment_to_settingsFragment)
-            })
+            }
         }
     }
 }

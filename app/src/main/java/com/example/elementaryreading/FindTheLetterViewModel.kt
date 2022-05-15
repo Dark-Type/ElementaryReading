@@ -4,13 +4,17 @@ import android.app.Application
 import android.widget.TextView
 import androidx.lifecycle.AndroidViewModel
 
-class FindTheLetterViewModel(private val applicationFLF: Application) :
+class FindTheLetterViewModel(applicationFLF: Application) :
     AndroidViewModel(applicationFLF) {
     private val speechRecognizer = SpeechRecognizer(applicationFLF)
-    private var txt = String()
+    private var txt : String? = null
 
     fun startListeningFLF() {
         speechRecognizer.startListening()
+    }
+
+    fun stopListeningFLF() {
+        speechRecognizer.stopListening()
     }
 
     fun isListeningFLF(): Boolean {
@@ -23,8 +27,9 @@ class FindTheLetterViewModel(private val applicationFLF: Application) :
     }
 
     fun checkTheLetterFLF(textView: TextView): Boolean {
-        if (txt != "0") {
-            if (txt.indexOf(textView.text.toString(), 0, false) != -1) {
+        if (txt != null) {
+            if (txt!!.indexOf(textView.text.toString(), 0, false) != -1) {
+                txt = null
                 return true
             }
         }

@@ -30,17 +30,17 @@ class SettingsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         if (savedInstanceState == null) {
-binding.imageButton2.setOnClickListener(View.OnClickListener {
-    requireActivity().findNavController(R.id.fragmentContainerView)
-        .navigate(R.id.action_settingsFragment_to_awardsFragment)
-})
-            binding.imageButton5.setOnClickListener(View.OnClickListener {
+            binding.imageButton2.setOnClickListener {
+                requireActivity().findNavController(R.id.fragmentContainerView)
+                    .navigate(R.id.action_settingsFragment_to_awardsFragment)
+            }
+            binding.imageButton5.setOnClickListener {
                 //play explanation
-            })
+            }
 
-            binding.imageButton6.setOnClickListener(View.OnClickListener {
+            binding.imageButton6.setOnClickListener {
                 requireActivity().onBackPressed()
-            })
+            }
 
         }
     }

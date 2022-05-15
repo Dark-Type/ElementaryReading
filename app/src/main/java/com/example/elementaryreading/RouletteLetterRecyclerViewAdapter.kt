@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 class RouletteLetterRecyclerViewAdapter(private val lettersToShowOnRoulette: List<String>) :
     RecyclerView.Adapter<RouletteLetterRecyclerViewAdapter.RouletteLetterRecyclerViewHolder>() {
     class RouletteLetterRecyclerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val textView1 : TextView = itemView.findViewById(R.id.letterTextView)
+        val textView1: TextView = itemView.findViewById(R.id.letterTextView)
 
     }
 

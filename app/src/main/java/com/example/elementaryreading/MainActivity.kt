@@ -1,25 +1,36 @@
 package com.example.elementaryreading
 
-import android.content.Context
+
+import android.Manifest
+import android.app.Application
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.speech.SpeechRecognizer
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import java.util.jar.Manifest
+import androidx.navigation.fragment.findNavController
+import com.example.elementaryreading.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
-
-
-
-
-
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
+        fun checkAudioRecordingPermission(context: Application) =
+            ContextCompat.checkSelfPermission(
+                context,
+                Manifest.permission.RECORD_AUDIO
+            ) == PackageManager.PERMISSION_GRANTED
+        if (!checkAudioRecordingPermission(context = application)) {
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.RECORD_AUDIO), 200)
+        }
 
+        binding = ActivityMainBinding.inflate(layoutInflater)
 
+        val hostFragment = supportFragmentManager.findFragmentById(binding.fragmentContainerView.id)
+        setContentView(binding.root)
+        hostFragment?.findNavController()?.navigate(R.id.action_rouletteFragment_to_findTheLetterFragment)
     }
 
 

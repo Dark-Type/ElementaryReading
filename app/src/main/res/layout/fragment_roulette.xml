@@ -49,7 +49,7 @@
                 app:cardCornerRadius="60dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline114"
-                app:layout_constraintStart_toStartOf="@+id/guideline90"
+                app:layout_constraintStart_toStartOf="@+id/awardsVertical0"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0">
 
@@ -131,7 +131,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline90"
+                android:id="@+id/awardsVertical0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"

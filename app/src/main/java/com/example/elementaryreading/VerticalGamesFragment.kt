@@ -29,16 +29,16 @@ class VerticalGamesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         if (savedInstanceState == null) {
-            binding.imageButton11.setOnClickListener(View.OnClickListener {
+            binding.imageButton11.setOnClickListener {
                 parentFragmentManager.beginTransaction().detach(this).attach(this).commit()
-            })
-            binding.imageButton7.setOnClickListener(View.OnClickListener {
+            }
+            binding.imageButton7.setOnClickListener {
 //pause
-            })
-            binding.imageButton9.setOnClickListener(View.OnClickListener {
+            }
+            binding.imageButton9.setOnClickListener {
                 requireActivity().findNavController(R.id.fragmentContainerView)
                     .navigate(R.id.action_verticalGamesFragment_to_settingsFragment)
-            })
+            }
         }
     }
 }

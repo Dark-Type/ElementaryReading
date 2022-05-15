@@ -3,12 +3,15 @@ package com.example.elementaryreading
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 
-class RouletteViewModel(private val applicationRoulette: Application) :
+class RouletteViewModel(applicationRoulette: Application) :
     AndroidViewModel(applicationRoulette) {
-var firstTime : Boolean = true
+    var firstTime: Boolean = true
     fun addRandomLetterToCurrentList(): String {
         addRandomLetterToList(HelperObject.currentLetterList)
-        return HelperObject.currentLetterList[HelperObject.currentLetterList.size]
+        if (HelperObject.currentLetterList.size == 0) {
+            return HelperObject.currentLetterList[0]
+        }
+        return HelperObject.currentLetterList[HelperObject.currentLetterList.size - 1]
     }
 
     fun generateLettersToShowOnRoulette(listToFill: MutableList<String>) {
@@ -23,7 +26,7 @@ var firstTime : Boolean = true
     }
 
     private fun addRandomLetterToList(listToFill: MutableList<String>) {
-        val local: String = EveryLetter.values()[(0..EveryLetter.values().size).random()].letter
+        val local: String = EveryLetter.values()[(0 until EveryLetter.values().size).random()].letter
         if (HelperObject.currentLetterList.indexOf(local) == -1) {
             listToFill.add(local)
             return

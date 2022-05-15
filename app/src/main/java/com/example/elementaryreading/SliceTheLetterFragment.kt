@@ -1,6 +1,7 @@
 package com.example.elementaryreading
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,10 +30,12 @@ class SliceTheLetterFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         if (savedInstanceState == null) {
-binding.imageButton10.setOnClickListener(View.OnClickListener {
-    requireActivity().findNavController(R.id.fragmentContainerView)
-        .navigate(R.id.action_sliceTheLetterFragment_to_settingsFragment)
-})
+            binding.imageButton10.setOnClickListener {
+
+                Log.d("test", "test")
+                requireActivity().findNavController(R.id.fragmentContainerView)
+                    .navigate(R.id.action_sliceTheLetterFragment_to_settingsFragment)
+            }
 
 
         }

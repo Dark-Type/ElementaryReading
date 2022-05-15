@@ -2,18 +2,22 @@ package com.example.elementaryreading
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import java.lang.Math.random
 
-class GuessTheLetterViewModel(private val applicationGTL: Application) :
+
+class GuessTheLetterViewModel(applicationGTL: Application) :
     AndroidViewModel(applicationGTL) {
-    fun getRandomisedNumber(): Int{
-       return (0..7).random()
-   }
-  private  var lettersList = mutableListOf<Char>()
+    fun getRandomisedNumber(): Int {
+        return (0..7).random()
+    }
+
+    private var lettersList = mutableListOf<Char>()
     fun getRandomLetterFromList(): Char {
+        if (lettersList.size == 0) {
+            if ((0..10).random() > 3) {
+                return 'А'
+            }
+            return 'Б'
+        }
         return lettersList[(0..lettersList.size).random()]
     }
-   var letterIsFound: Boolean =false
 }

@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class RouletteGameRecyclerViewAdapter(private val gameTypeToShowOnRoulette: List<String>) :
@@ -26,7 +25,7 @@ class RouletteGameRecyclerViewAdapter(private val gameTypeToShowOnRoulette: List
 
     override fun getItemCount(): Int = gameTypeToShowOnRoulette.size
     override fun onBindViewHolder(
-        holder: RouletteGameRecyclerViewAdapter.RouletteGameRecyclerViewHolder,
+        holder: RouletteGameRecyclerViewHolder,
         position: Int
     ) {
 

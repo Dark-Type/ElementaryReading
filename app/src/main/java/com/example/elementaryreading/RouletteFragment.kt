@@ -34,43 +34,44 @@ class RouletteFragment : Fragment() {
 
         if (savedInstanceState == null) {
 
-            val disabler : RecyclerView.OnItemTouchListener = RecyclerViewDisabler()
+            val disabler: RecyclerView.OnItemTouchListener = RecyclerViewDisabler()
             binding.lettersRecyclerView.addOnItemTouchListener(disabler)
             binding.gamesRecyclerView.addOnItemTouchListener(disabler)
             viewModel.randomizeGame(HelperObject.gamesList)
 
-            if(viewModel.firstTime){
+            if (viewModel.firstTime) {
                 for (i in 0..3)
                     viewModel.addRandomLetterToCurrentList()
                 viewModel.generateLettersToShowOnRoulette(lettersToShowOnRoulette)
-                lettersToShowOnRoulette.add(HelperObject.currentLetterList[HelperObject.currentLetterList.size])
+                lettersToShowOnRoulette.add(HelperObject.currentLetterList[HelperObject.currentLetterList.size - 1])
                 binding.lettersRecyclerView.adapter =
                     RouletteLetterRecyclerViewAdapter(lettersToShowOnRoulette)
                 binding.lettersRecyclerView.smoothScrollToPosition(5)
             }
             viewModel.addRandomLetterToCurrentList()
             viewModel.generateLettersToShowOnRoulette(lettersToShowOnRoulette)
-            lettersToShowOnRoulette.add(HelperObject.currentLetterList[HelperObject.currentLetterList.size])
+            lettersToShowOnRoulette.add(HelperObject.currentLetterList[HelperObject.currentLetterList.size - 1])
             binding.lettersRecyclerView.adapter =
                 RouletteLetterRecyclerViewAdapter(lettersToShowOnRoulette)
             binding.lettersRecyclerView.smoothScrollToPosition(5)
 
-            binding.gamesRecyclerView.adapter = RouletteGameRecyclerViewAdapter(HelperObject.gamesList)
+            binding.gamesRecyclerView.adapter =
+                RouletteGameRecyclerViewAdapter(HelperObject.gamesList)
             binding.gamesRecyclerView.smoothScrollToPosition(5)
-           if(HelperObject.gamesList[5] == "tetris"||HelperObject.gamesList[5] == "three_in_line" ) {
-               requireActivity().findNavController(R.id.fragmentContainerView)
-                 .navigate(R.id.action_rouletteFragment_to_verticalGamesFragment)
-           }
-            if(HelperObject.gamesList[5] =="find_the_letter"){
+            if (HelperObject.gamesList[5] == "tetris" || HelperObject.gamesList[5] == "three_in_line") {
+                requireActivity().findNavController(R.id.fragmentContainerView)
+                  .navigate(R.id.action_rouletteFragment_to_verticalGamesFragment)
+            }
+            if (HelperObject.gamesList[5] == "find_the_letter") {
                 requireActivity().findNavController(R.id.fragmentContainerView)
                     .navigate(R.id.action_settingsFragment_to_findTheLetterFragment)
 
             }
-            if(HelperObject.gamesList[5] == "guess_the_letter"){
+            if (HelperObject.gamesList[5] == "guess_the_letter") {
                 requireActivity().findNavController(R.id.fragmentContainerView)
                     .navigate(R.id.action_rouletteFragment_to_guessTheLetterFragment)
-                }
-            if(HelperObject.gamesList[5] == "slice_the_letter"){
+            }
+            if (HelperObject.gamesList[5] == "slice_the_letter") {
                 requireActivity().findNavController(R.id.fragmentContainerView)
                     .navigate(R.id.action_rouletteFragment_to_sliceTheLetterFragment)
 

@@ -13,8 +13,9 @@ import androidx.core.content.ContextCompat
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import kotlin.math.abs
 
-class SpeechRecognizer (application: Application):
+class SpeechRecognizer(application: Application) :
     RecognitionListener {
 
     data class ViewState(
@@ -27,21 +28,21 @@ class SpeechRecognizer (application: Application):
     private var viewState: MutableLiveData<ViewState>? = null
     private var previousRmsdB = 0f
 
-    private val speechRecognizer: SpeechRecognizer = createSpeechRecognizer(application.applicationContext).apply {
-        setRecognitionListener(this@SpeechRecognizer)
-    }
+    private val speechRecognizer: SpeechRecognizer =
+        createSpeechRecognizer(application.applicationContext).apply {
+            setRecognitionListener(this@SpeechRecognizer)
+        }
 
     private val recognizerIntent: Intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
-        putExtra(RecognizerIntent.EXTRA_LANGUAGE,"ru-RU" )
+        putExtra(RecognizerIntent.EXTRA_LANGUAGE, "ru-RU")
         putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
         putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, application.packageName)
         putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true)
     }
 
-    var isListening = false
+    val isListening
         get() = viewState?.value?.isListening ?: false
 
-    var permissionToRecordAudio = checkAudioRecordingPermission(context = application)
 
     fun getViewState(): LiveData<ViewState> {
         if (viewState == null) {
@@ -54,7 +55,7 @@ class SpeechRecognizer (application: Application):
 
     private fun initViewState() = ViewState(spokenText = "", isListening = false, error = null)
 
-   fun startListening() {
+    fun startListening() {
         speechRecognizer.startListening(recognizerIntent)
         notifyListening(isRecording = true)
     }
@@ -70,11 +71,10 @@ class SpeechRecognizer (application: Application):
 
     private fun updateResults(speechBundle: Bundle?) {
         val userSaid = speechBundle?.getStringArrayList(RESULTS_RECOGNITION)
-        viewState?.value = viewState?.value?.copy(spokenText = userSaid?.get(0) ?: "", rmsDbChanged = false)
+        viewState?.value =
+            viewState?.value?.copy(spokenText = userSaid?.get(0) ?: "", rmsDbChanged = false)
     }
 
-    private fun checkAudioRecordingPermission(context: Application) =
-        ContextCompat.checkSelfPermission(context, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED
 
     override fun onPartialResults(results: Bundle?) = updateResults(speechBundle = results)
     override fun onResults(results: Bundle?) = updateResults(speechBundle = results)
@@ -87,21 +87,23 @@ class SpeechRecognizer (application: Application):
         }
     }
 
-    private fun diffRms(newRms: Float, previousRms: Float): Int = Math.abs(previousRms - newRms).toInt()
+    private fun diffRms(newRms: Float, previousRms: Float): Int = abs(previousRms - newRms).toInt()
 
     override fun onError(errorCode: Int) {
-        viewState?.value = viewState?.value?.copy(error = when (errorCode) {
-            ERROR_AUDIO -> "error_audio_error"
-            ERROR_CLIENT -> "error_client"
-            ERROR_INSUFFICIENT_PERMISSIONS -> "error_permission"
-            ERROR_NETWORK -> "error_network"
-            ERROR_NETWORK_TIMEOUT -> "error_timeout"
-            ERROR_NO_MATCH -> "error_no_match"
-            ERROR_RECOGNIZER_BUSY -> "error_busy"
-            ERROR_SERVER -> "error_server"
-            ERROR_SPEECH_TIMEOUT -> "error_timeout"
-            else -> "error_unknown"
-        }, rmsDbChanged = false)
+        viewState?.value = viewState?.value?.copy(
+            error = when (errorCode) {
+                ERROR_AUDIO -> "error_audio_error"
+                ERROR_CLIENT -> "error_client"
+                ERROR_INSUFFICIENT_PERMISSIONS -> "error_permission"
+                ERROR_NETWORK -> "error_network"
+                ERROR_NETWORK_TIMEOUT -> "error_timeout"
+                ERROR_NO_MATCH -> "error_no_match"
+                ERROR_RECOGNIZER_BUSY -> "error_busy"
+                ERROR_SERVER -> "error_server"
+                ERROR_SPEECH_TIMEOUT -> "error_timeout"
+                else -> "error_unknown"
+            }, rmsDbChanged = false
+        )
     }
 
     override fun onReadyForSpeech(p0: Bundle?) {}

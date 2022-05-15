@@ -2,19 +2,16 @@ package com.example.elementaryreading
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.SharedPreferences
 import android.graphics.*
 import android.view.MotionEvent
 import android.view.SurfaceHolder
 import android.view.SurfaceView
-import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.math.sqrt
 
 object Constants {
     var SCREEN_WIDTH = 0
     var SCREEN_HEIGHT = 0
-    var PREF: SharedPreferences? = null
 }
 
 interface GameObject {
@@ -24,7 +21,7 @@ interface GameObject {
 
 class Letter(
     rectHeight: Int, //Color used for instantiating rect object
-    val color: Int,
+    private val color: Int,
     startX: Int,
     startY: Int,
     playerSize: Int, val type: Int
@@ -54,14 +51,14 @@ class Letter(
 
 
 class LetterManager(playerSize: Int, letterLocation: Int, letterHeight: Int, color: Int) {
-    private val letters: ArrayList<Letter> = TODO()
-    private val letterLocation: Int = 0
-    private val playerSize: Int = 0
-    private val letterHeight: Int = 0
+    private val letters: ArrayList<Letter> = ArrayList()
+    private var letterLocation: Int = 0
+    private var playerSize: Int = 0
+    private var letterHeight: Int = 0
     private var misses = 0
-    private val color = 0
+    private var color = 0
     private var start: Long = 0
-    private val initialization: Long = 0
+    private var initialization: Long = 0
     fun collisionDetection(player: SliceTheLetterPlayer?): Boolean {
 
         //Check each letter on screen for detection
@@ -85,8 +82,7 @@ class LetterManager(playerSize: Int, letterLocation: Int, letterHeight: Int, col
     //Assigns next falling letter to a random type
     private fun determineLetterType(): Int {
         val value = (0..100).random()
-        var type = -1
-        type = if (value in 0..30) {
+        val type: Int = if (value in 0..30) {
             1 //here would be correct letter
         } else {
             2 // here would be incorrect letters
@@ -162,17 +158,15 @@ class LetterManager(playerSize: Int, letterLocation: Int, letterHeight: Int, col
 
         for (letter in letters) {
             letter.draw(canvas)
-            val text: String
-            when (letter.type) {
-                1 -> text = HelperObject.currentLetterList[HelperObject.currentLetterList.size]
-                2 -> text = HelperObject.getRandomLetter()
-
+            val text = when (letter.type) {
+                1 -> HelperObject.currentLetterList[HelperObject.currentLetterList.size]
+                else -> HelperObject.getRandomLetter()
             }
             canvas.drawText(
                 text,
                 (Math.random() * (Constants.SCREEN_WIDTH - playerSize)).toFloat(),
-                null,
-                letter.rectangle,
+                0F,
+
                 Paint()
             )
         }
@@ -203,7 +197,6 @@ class LetterManager(playerSize: Int, letterLocation: Int, letterHeight: Int, col
     }
 
     init {
-        letters = ArrayList()
         this.letterLocation = letterLocation
         this.playerSize = playerSize
         this.letterHeight = letterHeight
@@ -218,11 +211,12 @@ class LetterManager(playerSize: Int, letterLocation: Int, letterHeight: Int, col
 
 }
 
-class SliceTheLetterGamePanel(context: Context?) : SurfaceView(context), SurfaceHolder.Callback {
-    private lateinit var thread: SliceTheLetterThread
-    private val user: SliceTheLetterPlayer = TODO()
-    private lateinit var userPoint: Point
-    private lateinit var letterManager: LetterManager
+class SliceTheLetterGamePanel constructor(context: Context) : SurfaceView(context),
+    SurfaceHolder.Callback {
+    private var thread: SliceTheLetterThread
+    private val user: SliceTheLetterPlayer
+    private var userPoint: Point
+    private var letterManager: LetterManager
     private var gameOver = false
     override fun surfaceChanged(holder: SurfaceHolder, format: Int, width: Int, height: Int) {}
     override fun surfaceCreated(holder: SurfaceHolder) {
@@ -347,7 +341,9 @@ class SliceTheLetterGamePanel(context: Context?) : SurfaceView(context), Surface
                     canvas = surfaceHolder.lockCanvas()
                     synchronized(surfaceHolder) {
                         gamePanel.update()
-                        gamePanel.draw(canvas)
+                        canvas?.let {
+                            gamePanel.draw(it)
+                        }
                     }
                 } catch (e: Exception) {
                     e.printStackTrace()
@@ -364,7 +360,7 @@ class SliceTheLetterGamePanel(context: Context?) : SurfaceView(context), Surface
                 waitTime = targetTime - time
                 try {
                     if (waitTime > 0) {
-                        this.sleep(waitTime)
+                        sleep(waitTime)
                     }
                 } catch (e: Exception) {
                     e.printStackTrace()
@@ -381,26 +377,26 @@ class SliceTheLetterGamePanel(context: Context?) : SurfaceView(context), Surface
         }
 
         companion object {
-            const val maximalFPS = 30
+            const val maximalFPS = 60
             var canvas: Canvas? = null
         }
     }
 }
 
-    class SliceTheLetterPlayer(val rectangle: Rect, private val color: Int) : GameObject {
-        override fun draw(canvas: Canvas?) {
-            val paint = Paint()
-            paint.color = color
-            canvas?.drawRect(rectangle, paint)
-        }
-
-
-        override fun update() {}
-        fun update(point: Point) {
-
-            //Set new location of the user
-            rectangle[point.x - rectangle.width() / 2, point.y - rectangle.height() / 2, point.x + rectangle.width() / 2] =
-                point.y + rectangle.height() / 2
-        }
+class SliceTheLetterPlayer(val rectangle: Rect, private val color: Int) : GameObject {
+    override fun draw(canvas: Canvas?) {
+        val paint = Paint()
+        paint.color = color
+        canvas?.drawRect(rectangle, paint)
     }
+
+
+    override fun update() {}
+    fun update(point: Point) {
+
+        //Set new location of the user
+        rectangle[point.x - rectangle.width() / 2, point.y - rectangle.height() / 2, point.x + rectangle.width() / 2] =
+            point.y + rectangle.height() / 2
+    }
+}
 

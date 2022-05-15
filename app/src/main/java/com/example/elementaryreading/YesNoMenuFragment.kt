@@ -31,13 +31,13 @@ class YesNoMenuFragment : Fragment() {
         if (savedInstanceState == null) {
             //play question
 
-binding.yesButton.setOnClickListener(View.OnClickListener {
-    requireActivity().findNavController(R.id.fragmentContainerView)
-        .navigate(R.id.action_yesNoMenuFragment_to_rouletteFragment)
-})
-            binding.noButton.setOnClickListener(View.OnClickListener {
+            binding.yesButton.setOnClickListener {
+                requireActivity().findNavController(R.id.fragmentContainerView)
+                    .navigate(R.id.action_yesNoMenuFragment_to_rouletteFragment)
+            }
+            binding.noButton.setOnClickListener {
                 //play explanation
-            })
+            }
         }
     }
 }

@@ -33,22 +33,23 @@ class FindTheLetterFragment : Fragment() {
         if (savedInstanceState == null) {
 
 
-            if ((0..1).random() % 2 == 0) {
+            if ((1 until 2).random() % 2 == 0) {
                 binding.findTheLetterBackground.setImageResource(R.drawable.find_the_letter_background_2)
             } else {
                 binding.findTheLetterBackground.setImageResource(R.drawable.find_the_letter_background_1)
             }
-            binding.imageButton7.setOnClickListener(View.OnClickListener {
+            binding.imageButton7.setOnClickListener {
                 // play
-            })
-            binding.imageButton7.setOnClickListener(View.OnClickListener {
+            }
+            binding.imageButton7.setOnClickListener {
                 requireActivity().findNavController(R.id.fragmentContainerView)
                     .navigate(R.id.action_findTheLetterFragment_to_settingsFragment)
-            })
-            binding.imageButton9.setOnClickListener(View.OnClickListener {
+            }
+            binding.imageButton9.setOnClickListener {
                 parentFragmentManager.beginTransaction().detach(this).attach(this).commit()
-            })
+            }
             drawRound(0)
+            viewModel.stopListeningFLF()
             requireActivity().findNavController(R.id.fragmentContainerView)
                 .navigate(R.id.action_findTheLetterFragment_to_victoryMenuFragment)
         }
@@ -56,19 +57,22 @@ class FindTheLetterFragment : Fragment() {
     }
 
     private fun drawRound(roundNumber: Int) {
-if(roundNumber == 9){
-    return
-}
+        if (roundNumber == 9) {
+            return
+        }
 
-        var textView = TextView(requireContext()).apply {
+        val textView = TextView(requireContext()).apply {
             textSize = 20f
             x = (0..binding.findTheLetterBackground.width).random().toFloat()
             y = ((binding.background.height - binding.findTheLetterBackground.height) / 2..
                     (binding.background.height - binding.findTheLetterBackground.height) / 2
                     + binding.findTheLetterBackground.height).random().toFloat()
-            text = HelperObject.getRandomLetter().toString()
+            text = HelperObject.getRandomLetter()
         }
-        binding.whiteBackground7.setOnClickListener(View.OnClickListener {
+
+        binding.background.addView(textView)
+
+        binding.whiteBackground7.setOnClickListener {
             viewModel.startListeningFLF()
             if (!viewModel.isListeningFLF()) {
                 viewModel.setTextFLF()
@@ -76,7 +80,7 @@ if(roundNumber == 9){
                     drawRound(roundNumber + 1)
                 }
             }
-        })
+        }
 
     }
 }
