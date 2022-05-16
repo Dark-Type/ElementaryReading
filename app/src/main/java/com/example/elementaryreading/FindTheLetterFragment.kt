@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
@@ -41,7 +43,7 @@ class FindTheLetterFragment : Fragment() {
             binding.imageButton7.setOnClickListener {
                 // play
             }
-            binding.imageButton7.setOnClickListener {
+            binding.imageButton8.setOnClickListener {
                 requireActivity().findNavController(R.id.fragmentContainerView)
                     .navigate(R.id.action_findTheLetterFragment_to_settingsFragment)
             }
@@ -50,18 +52,20 @@ class FindTheLetterFragment : Fragment() {
             }
             drawRound(0)
             viewModel.stopListeningFLF()
-            requireActivity().findNavController(R.id.fragmentContainerView)
-                .navigate(R.id.action_findTheLetterFragment_to_victoryMenuFragment)
         }
-
     }
 
     private fun drawRound(roundNumber: Int) {
         if (roundNumber == 9) {
+            requireActivity().findNavController(R.id.fragmentContainerView)
+                .navigate(R.id.action_findTheLetterFragment_to_victoryMenuFragment)
+
             return
         }
 
-        val textView = TextView(requireContext()).apply {
+        val textView = TextView(requireContext())
+
+        textView.apply {
             textSize = 20f
             x = (0..binding.findTheLetterBackground.width).random().toFloat()
             y = ((binding.background.height - binding.findTheLetterBackground.height) / 2..

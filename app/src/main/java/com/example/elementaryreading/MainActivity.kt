@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         val hostFragment = supportFragmentManager.findFragmentById(binding.fragmentContainerView.id)
         setContentView(binding.root)
-        hostFragment?.findNavController()?.navigate(R.id.action_rouletteFragment_to_findTheLetterFragment)
+        //hostFragment?.findNavController()?.navigate(R.id.action_rouletteFragment_to_guessTheLetterFragment)
     }
 
 
