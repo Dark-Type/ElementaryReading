@@ -6,6 +6,10 @@ import androidx.lifecycle.AndroidViewModel
 class RouletteViewModel(applicationRoulette: Application) :
     AndroidViewModel(applicationRoulette) {
     var firstTime: Boolean = true
+    fun firstTimeCompleted(){
+        firstTime = false
+
+    }
     fun addRandomLetterToCurrentList(): String {
         addRandomLetterToList(HelperObject.currentLetterList)
         if (HelperObject.currentLetterList.size == 0) {

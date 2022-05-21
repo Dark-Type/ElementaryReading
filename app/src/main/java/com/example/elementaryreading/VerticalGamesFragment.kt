@@ -30,14 +30,14 @@ class VerticalGamesFragment : Fragment() {
 
         if (savedInstanceState == null) {
             binding.imageButton11.setOnClickListener {
-                parentFragmentManager.beginTransaction().detach(this).attach(this).commit()
+
             }
             binding.imageButton7.setOnClickListener {
-//pause
+   requireActivity().findNavController(R.id.fragmentContainerView)
+                    .navigate(R.id.action_verticalGamesFragment_to_settingsFragment)
             }
             binding.imageButton9.setOnClickListener {
-                requireActivity().findNavController(R.id.fragmentContainerView)
-                    .navigate(R.id.action_verticalGamesFragment_to_settingsFragment)
+                parentFragmentManager.beginTransaction().detach(this).attach(this).commit()
             }
         }
     }

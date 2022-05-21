@@ -33,66 +33,18 @@ class RouletteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val lettersToShowOnRoulette = mutableListOf<String>()
+
 
         if (savedInstanceState == null) {
 
-            binding.lettersRecyclerView.layoutManager =
-                LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
 
-            binding.gamesRecyclerView.layoutManager =
-                LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-
-            val disabler: RecyclerView.OnItemTouchListener = RecyclerViewDisabler()
-            binding.lettersRecyclerView.addOnItemTouchListener(disabler)
-            binding.gamesRecyclerView.addOnItemTouchListener(disabler)
-            viewModel.randomizeGame(HelperObject.gamesList)
-
-            if (viewModel.firstTime) {
-                for (i in 0..3)
-                    viewModel.addRandomLetterToCurrentList()
-                viewModel.generateLettersToShowOnRoulette(lettersToShowOnRoulette)
-                lettersToShowOnRoulette.add(HelperObject.currentLetterList[HelperObject.currentLetterList.size - 1])
-                binding.lettersRecyclerView.adapter =
-                    RouletteLetterRecyclerViewAdapter(lettersToShowOnRoulette)
-                binding.lettersRecyclerView.smoothScrollToPosition(5)
-            }
-            viewModel.addRandomLetterToCurrentList()
-            viewModel.generateLettersToShowOnRoulette(lettersToShowOnRoulette)
-            lettersToShowOnRoulette.add(HelperObject.currentLetterList[HelperObject.currentLetterList.size - 1])
-            binding.lettersRecyclerView.adapter =
-                RouletteLetterRecyclerViewAdapter(lettersToShowOnRoulette)
-            binding.lettersRecyclerView.smoothScrollToPosition(5)
-
-            binding.gamesRecyclerView.adapter =
-                RouletteGameRecyclerViewAdapter(HelperObject.gamesList)
-            binding.gamesRecyclerView.smoothScrollToPosition(5)
-            
-            binding.lettersRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                    super.onScrolled(recyclerView, dx, dy)
-
-                    Log.d("test", "scrolled")
-
-                }
-
-            })
-            binding.gamesRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                    super.onScrolled(recyclerView, dx, dy)
-
-                    Log.d("test", "scrolled")
-
-                }
-
-            })
 //            if (HelperObject.gamesList[5] == "tetris" || HelperObject.gamesList[5] == "three_in_line") {
 //                requireActivity().findNavController(R.id.fragmentContainerView)
 //                  .navigate(R.id.action_rouletteFragment_to_verticalGamesFragment)
 //            }
 //            if (HelperObject.gamesList[5] == "find_the_letter") {
 //                requireActivity().findNavController(R.id.fragmentContainerView)
-//                    .navigate(R.id.action_settingsFragment_to_findTheLetterFragment)
+//                    .navigate(R.id.action_rouletteFragment_to_findTheLetterFragment)
 //
 //            }
 //            if (HelperObject.gamesList[5] == "guess_the_letter") {
@@ -106,5 +58,65 @@ class RouletteFragment : Fragment() {
 //            }
 
         }
+    }
+
+    override fun onResume() {
+
+        super.onResume()
+        val lettersToShowOnRoulette = mutableListOf<String>()
+        binding.lettersRecyclerView.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+
+        binding.gamesRecyclerView.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+
+        val disabler: RecyclerView.OnItemTouchListener = RecyclerViewDisabler()
+        binding.lettersRecyclerView.addOnItemTouchListener(disabler)
+        binding.gamesRecyclerView.addOnItemTouchListener(disabler)
+        viewModel.randomizeGame(HelperObject.gamesList)
+
+        if (viewModel.firstTime) {
+            for (i in 0..3) {
+
+                viewModel.addRandomLetterToCurrentList()
+                viewModel.generateLettersToShowOnRoulette(lettersToShowOnRoulette)
+                lettersToShowOnRoulette.add(HelperObject.currentLetterList[HelperObject.currentLetterList.size - 1])
+                binding.lettersRecyclerView.adapter =
+                    RouletteLetterRecyclerViewAdapter(lettersToShowOnRoulette)
+                binding.lettersRecyclerView.smoothScrollToPosition(5)
+                viewModel.firstTimeCompleted()
+            }
+        }
+        viewModel.addRandomLetterToCurrentList()
+        viewModel.generateLettersToShowOnRoulette(lettersToShowOnRoulette)
+        lettersToShowOnRoulette.add(HelperObject.currentLetterList[HelperObject.currentLetterList.size - 1])
+        binding.lettersRecyclerView.adapter =
+            RouletteLetterRecyclerViewAdapter(lettersToShowOnRoulette)
+        binding.lettersRecyclerView.smoothScrollToPosition(5)
+
+        binding.gamesRecyclerView.adapter =
+            RouletteGameRecyclerViewAdapter(HelperObject.gamesList)
+        binding.gamesRecyclerView.smoothScrollToPosition(3)
+
+        binding.lettersRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+
+                Log.d("test", "scrolled")
+
+            }
+
+        })
+        binding.gamesRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+
+                Log.d("test", "scrolled")
+
+            }
+
+        })
+//        requireActivity().findNavController(R.id.fragmentContainerView)
+//                   .navigate(R.id.action_rouletteFragment_to_guessTheLetterFragment)
     }
 }

@@ -1,15 +1,12 @@
 package com.example.elementaryreading
 
-import android.Manifest
 import android.app.Application
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Bundle
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
 import android.speech.SpeechRecognizer.*
-import androidx.core.content.ContextCompat
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -24,10 +21,8 @@ class SpeechRecognizer(application: Application) :
         val error: String?,
         val rmsDbChanged: Boolean = false
     )
-
     private var viewState: MutableLiveData<ViewState>? = null
     private var previousRmsdB = 0f
-
     private val speechRecognizer: SpeechRecognizer =
         createSpeechRecognizer(application.applicationContext).apply {
             setRecognitionListener(this@SpeechRecognizer)
@@ -53,7 +48,7 @@ class SpeechRecognizer(application: Application) :
         return viewState as MutableLiveData<ViewState>
     }
 
-    private fun initViewState() = ViewState(spokenText = "", isListening = false, error = null)
+    private fun initViewState() = ViewState(spokenText = "", isListening = false,error = null)
 
     fun startListening() {
         speechRecognizer.startListening(recognizerIntent)
@@ -79,16 +74,6 @@ class SpeechRecognizer(application: Application) :
     override fun onPartialResults(results: Bundle?) = updateResults(speechBundle = results)
     override fun onResults(results: Bundle?) = updateResults(speechBundle = results)
     override fun onEndOfSpeech() = notifyListening(isRecording = false)
-
-    override fun onRmsChanged(rmsdB: Float) {
-        if (rmsdB > 4 && diffRms(newRms = rmsdB, previousRms = previousRmsdB) > 1) {
-            previousRmsdB = rmsdB
-            viewState?.value = viewState?.value?.copy(rmsDbChanged = true)
-        }
-    }
-
-    private fun diffRms(newRms: Float, previousRms: Float): Int = abs(previousRms - newRms).toInt()
-
     override fun onError(errorCode: Int) {
         viewState?.value = viewState?.value?.copy(
             error = when (errorCode) {
@@ -105,6 +90,15 @@ class SpeechRecognizer(application: Application) :
             }, rmsDbChanged = false
         )
     }
+
+    override fun onRmsChanged(rmsdB: Float) {
+        if (rmsdB > 4 && diffRms(newRms = rmsdB, previousRms = previousRmsdB) > 1) {
+            previousRmsdB = rmsdB
+            viewState?.value = viewState?.value?.copy(rmsDbChanged = true)
+        }
+    }
+
+    private fun diffRms(newRms: Float, previousRms: Float): Int = abs(previousRms - newRms).toInt()
 
     override fun onReadyForSpeech(p0: Bundle?) {}
     override fun onBufferReceived(p0: ByteArray?) {}

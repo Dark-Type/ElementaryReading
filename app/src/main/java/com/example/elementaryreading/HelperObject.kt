@@ -10,7 +10,7 @@ object HelperObject {
     )
     var currentLetterList = mutableListOf<String>()
     fun getRandomLetter(): String {
-        return currentLetterList[(0..currentLetterList.size).random()]
+        return currentLetterList[(0 until currentLetterList.size).random()]
 
     }
 

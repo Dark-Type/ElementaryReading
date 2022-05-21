@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.elementaryreading.databinding.FragmentSliceTheLetterBinding
 
+
 class SliceTheLetterFragment : Fragment() {
     private lateinit var binding: FragmentSliceTheLetterBinding
 
@@ -18,7 +19,7 @@ class SliceTheLetterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return if (savedInstanceState == null) {
-            binding = FragmentSliceTheLetterBinding.inflate(layoutInflater)
+            binding = FragmentSliceTheLetterBinding.inflate(inflater)
 
             binding.root
         } else {
@@ -32,7 +33,7 @@ class SliceTheLetterFragment : Fragment() {
         if (savedInstanceState == null) {
             binding.imageButton10.setOnClickListener {
 
-                Log.d("test", "test")
+
                 requireActivity().findNavController(R.id.fragmentContainerView)
                     .navigate(R.id.action_sliceTheLetterFragment_to_settingsFragment)
             }
