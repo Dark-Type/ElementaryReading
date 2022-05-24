@@ -50,6 +50,7 @@ class GuessTheLetterFragment : Fragment() {
             }
         }
     }
+
     override fun onResume() {
         super.onResume()
         val typeFace: Typeface? = ResourcesCompat.getFont(
@@ -64,7 +65,7 @@ class GuessTheLetterFragment : Fragment() {
                 0,
                 0
             )
-viewToAdd.gravity = Gravity.CENTER
+            viewToAdd.gravity = Gravity.CENTER
             viewToAdd.layoutParams = lp
             viewToAdd.typeface = typeFace
             viewToAdd.textSize = 64f
@@ -102,12 +103,13 @@ viewToAdd.gravity = Gravity.CENTER
                     "whiteBackground$i",
                     "id",
                     requireActivity().packageName
-                ),ConstraintSet.BOTTOM
+                ), ConstraintSet.BOTTOM
             )
-set.applyTo(binding.mainBackground)
+            set.applyTo(binding.mainBackground)
         }
         drawRound(0)
     }
+
     private fun drawRound(roundNumber: Int) {
         if (roundNumber == 9) {
             requireActivity().findNavController(R.id.fragmentContainerView)
@@ -115,7 +117,7 @@ set.applyTo(binding.mainBackground)
         }
         val currentNumber = viewModel.getRandomisedNumber()
         val currentLetter = viewModel.getRandomLetterFromList()
-         indexForPlayer = HelperObject.absoluteLetterList.indexOf(currentLetter)
+        indexForPlayer = HelperObject.absoluteLetterList.indexOf(currentLetter)
         for (j in 0..7) {
             val it = binding.mainBackground.findViewWithTag<TextView>("view$j")
             if (it.tag == "view$currentNumber") {
