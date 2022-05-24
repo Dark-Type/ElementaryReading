@@ -35,7 +35,7 @@ class SpeechRecognizer(application: Application) :
         putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true)
     }
 
-    val isListening
+    var isListening = false
         get() = viewState?.value?.isListening ?: false
 
 

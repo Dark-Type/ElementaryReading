@@ -15,6 +15,8 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import com.example.elementaryreading.databinding.FragmentFindTheLetterBinding
 
@@ -23,6 +25,7 @@ class FindTheLetterFragment : Fragment() {
     private var backgroundWidth = 0
     private var backgroundHeight = 0
     private var imageWidth = 0
+
         set(value) {
             field = value
             if (!isFirstRoundDisplayed) {
@@ -67,6 +70,10 @@ class FindTheLetterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (savedInstanceState == null) {
+//            private fun setupSpeechRecognizer(){
+//                speechRecognizerModel = ViewModelProviders.of(this).get(FindTheLetterViewModel::class.java )
+//
+//            }
             viewModel.speechRecognizer.getViewState().observe(viewLifecycleOwner) { viewState ->
                 viewModel.render(viewState)
             }
@@ -128,8 +135,10 @@ class FindTheLetterFragment : Fragment() {
 
             if (viewModel.isListeningFLF()) {
                 viewModel.stopListeningFLF()
+                binding.micro.visibility = View.INVISIBLE
             } else {
                 viewModel.startListeningFLF()
+                binding.micro.visibility = View.VISIBLE
             }
             if (viewModel.checkTheLetterFLF(textView)) {
                 drawRound(roundNumber + 1)

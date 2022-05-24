@@ -1,11 +1,12 @@
 package com.example.elementaryreading
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.compose.ui.window.Dialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
@@ -16,6 +17,8 @@ import com.example.elementaryreading.databinding.FragmentRouletteBinding
 class RouletteFragment : Fragment() {
     private lateinit var binding: FragmentRouletteBinding
     private val viewModel: RouletteViewModel by viewModels()
+    private var counter = 0
+    private var gCounter = 0
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,39 +32,12 @@ class RouletteFragment : Fragment() {
             view
         }
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
-
         if (savedInstanceState == null) {
-
-
-//            if (HelperObject.gamesList[5] == "tetris" || HelperObject.gamesList[5] == "three_in_line") {
-//                requireActivity().findNavController(R.id.fragmentContainerView)
-//                  .navigate(R.id.action_rouletteFragment_to_verticalGamesFragment)
-//            }
-//            if (HelperObject.gamesList[5] == "find_the_letter") {
-//                requireActivity().findNavController(R.id.fragmentContainerView)
-//                    .navigate(R.id.action_rouletteFragment_to_findTheLetterFragment)
-//
-//            }
-//            if (HelperObject.gamesList[5] == "guess_the_letter") {
-//                requireActivity().findNavController(R.id.fragmentContainerView)
-//                    .navigate(R.id.action_rouletteFragment_to_guessTheLetterFragment)
-//            }
-//            if (HelperObject.gamesList[5] == "slice_the_letter") {
-//                requireActivity().findNavController(R.id.fragmentContainerView)
-//                    .navigate(R.id.action_rouletteFragment_to_sliceTheLetterFragment)
-//
-//            }
-
         }
     }
-
     override fun onResume() {
-
         super.onResume()
         val lettersToShowOnRoulette = mutableListOf<String>()
         binding.lettersRecyclerView.layoutManager =
@@ -74,49 +50,100 @@ class RouletteFragment : Fragment() {
         binding.lettersRecyclerView.addOnItemTouchListener(disabler)
         binding.gamesRecyclerView.addOnItemTouchListener(disabler)
         viewModel.randomizeGame(HelperObject.gamesList)
-
-        if (viewModel.firstTime) {
-            for (i in 0..3) {
-
+        if (HelperObject.firstTime) {
+            HelperObject.firstTime = false
+            viewModel.generateLettersToShowOnRouletteFIRST(lettersToShowOnRoulette)
+            for (i in 1..5) {
                 viewModel.addRandomLetterToCurrentList()
-                viewModel.generateLettersToShowOnRoulette(lettersToShowOnRoulette)
-                lettersToShowOnRoulette.add(HelperObject.currentLetterList[HelperObject.currentLetterList.size - 1])
-                binding.lettersRecyclerView.adapter =
-                    RouletteLetterRecyclerViewAdapter(lettersToShowOnRoulette)
-                binding.lettersRecyclerView.smoothScrollToPosition(5)
-                viewModel.firstTimeCompleted()
+                lettersToShowOnRoulette[5 * i] =
+                    HelperObject.currentLetterList[HelperObject.currentLetterList.size - 1]
             }
+            binding.lettersRecyclerView.adapter =
+                RouletteLetterRecyclerViewAdapter(lettersToShowOnRoulette)
+            Handler(Looper.getMainLooper()).postDelayed({
+                binding.lettersRecyclerView.smoothScrollToPosition(5)
+                viewModel.playCurrentLetter(HelperObject.absoluteLetterList.indexOf(HelperObject.currentLetterList[0]))
+            }, 3000)
+            Handler(Looper.getMainLooper()).postDelayed({
+                binding.gamesRecyclerView.adapter =
+                    RouletteGameRecyclerViewAdapter(HelperObject.gamesList)
+                binding.gamesRecyclerView.smoothScrollToPosition(3)
+            }, 3000)
+        } else {
+            viewModel.addRandomLetterToCurrentList()
+            viewModel.generateLettersToShowOnRoulette(lettersToShowOnRoulette)
+            lettersToShowOnRoulette.add(HelperObject.currentLetterList[HelperObject.currentLetterList.size - 1])
+            binding.gamesRecyclerView.adapter =
+                RouletteGameRecyclerViewAdapter(HelperObject.gamesList)
+            binding.gamesRecyclerView.smoothScrollToPosition(0)
+            binding.lettersRecyclerView.adapter =
+                RouletteLetterRecyclerViewAdapter(lettersToShowOnRoulette)
+            binding.lettersRecyclerView.smoothScrollToPosition(0)
+            binding.lettersRecyclerView.smoothScrollToPosition(5)
+            viewModel.playCurrentLetter(HelperObject.absoluteLetterList.indexOf(HelperObject.currentLetterList[HelperObject.currentLetterList.size-1]))
+            binding.gamesRecyclerView.smoothScrollToPosition(3)
         }
-        viewModel.addRandomLetterToCurrentList()
-        viewModel.generateLettersToShowOnRoulette(lettersToShowOnRoulette)
-        lettersToShowOnRoulette.add(HelperObject.currentLetterList[HelperObject.currentLetterList.size - 1])
-        binding.lettersRecyclerView.adapter =
-            RouletteLetterRecyclerViewAdapter(lettersToShowOnRoulette)
-        binding.lettersRecyclerView.smoothScrollToPosition(5)
-
-        binding.gamesRecyclerView.adapter =
-            RouletteGameRecyclerViewAdapter(HelperObject.gamesList)
-        binding.gamesRecyclerView.smoothScrollToPosition(3)
-
         binding.lettersRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
+                counter++
+                when (counter) {
+                    3 -> {
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            viewModel.endCoroutine()
+                            binding.lettersRecyclerView.smoothScrollToPosition(10)
+                            viewModel.playCurrentLetter(HelperObject.absoluteLetterList.indexOf(HelperObject.currentLetterList[1]))
+                        }, 3000)
+                    }
+                    8 -> {
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            viewModel.endCoroutine()
+                            binding.lettersRecyclerView.smoothScrollToPosition(15)
+                            viewModel.playCurrentLetter(HelperObject.absoluteLetterList.indexOf(HelperObject.currentLetterList[2]))
+                        }, 3000)
+                    }
+                    13 -> {
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            viewModel.endCoroutine()
+                            binding.lettersRecyclerView.smoothScrollToPosition(20)
+                            viewModel.playCurrentLetter(HelperObject.absoluteLetterList.indexOf(HelperObject.currentLetterList[3]))
+                        }, 5000)
+                    }
+                    18 -> {
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            viewModel.endCoroutine()
+                            binding.lettersRecyclerView.smoothScrollToPosition(25)
+                            viewModel.playCurrentLetter(HelperObject.absoluteLetterList.indexOf(HelperObject.currentLetterList[4]))
+                        }, 7000)
 
-                Log.d("test", "scrolled")
+                    }
+                }
+                Log.d("test", "scrolledLETTER")
+
 
             }
-
         })
+
+
         binding.gamesRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
-
-                Log.d("test", "scrolled")
-
+                gCounter++
+                if (gCounter == 1) {
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        viewModel.endCoroutine()
+                        when (HelperObject.gamesList[2]) {
+                            "find_the_letter" -> requireActivity().findNavController(R.id.fragmentContainerView)
+                                .navigate(R.id.action_rouletteFragment_to_findTheLetterFragment)
+                            "guess_the_letter" -> requireActivity().findNavController(R.id.fragmentContainerView)
+                                .navigate(R.id.action_rouletteFragment_to_guessTheLetterFragment)
+                            "slice_the_letter" -> requireActivity().findNavController(R.id.fragmentContainerView)
+                                .navigate(R.id.action_rouletteFragment_to_sliceTheLetterFragment)
+                        }
+                    }, 15000)
+                }
             }
-
         })
-//        requireActivity().findNavController(R.id.fragmentContainerView)
-//                   .navigate(R.id.action_rouletteFragment_to_guessTheLetterFragment)
     }
 }
+

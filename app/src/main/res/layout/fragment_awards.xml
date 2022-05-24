@@ -54,11 +54,12 @@
                 app:layout_constraintVertical_bias="0.0">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/awardsBackground"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:id="@+id/imageView46"
+                        android:id="@+id/whiteCircle1"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -88,7 +89,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView44"
+                        android:id="@+id/whiteCircle31"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -103,7 +104,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView43"
+                        android:id="@+id/whiteCircle30"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -118,7 +119,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView42"
+                        android:id="@+id/whiteCircle29"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -133,7 +134,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView41"
+                        android:id="@+id/whiteCircle28"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -148,7 +149,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView40"
+                        android:id="@+id/whiteCircle27"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -163,7 +164,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView39"
+                        android:id="@+id/whiteCircle26"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -178,7 +179,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView38"
+                        android:id="@+id/whiteCircle25"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -193,7 +194,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView37"
+                        android:id="@+id/whiteCircle24"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -208,7 +209,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView36"
+                        android:id="@+id/whiteCircle23"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -238,7 +239,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView34"
+                        android:id="@+id/whiteCircle22"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -253,7 +254,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView33"
+                        android:id="@+id/whiteCircle20"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -268,7 +269,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView32"
+                        android:id="@+id/whiteCircle18"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -283,7 +284,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView31"
+                        android:id="@+id/whiteCircle17"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -298,7 +299,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView30"
+                        android:id="@+id/whiteCircle19"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -313,7 +314,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView29"
+                        android:id="@+id/whiteCircle16"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -328,7 +329,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView28"
+                        android:id="@+id/whiteCircle15"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -343,7 +344,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView27"
+                        android:id="@+id/whiteCircle14"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -358,7 +359,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView26"
+                        android:id="@+id/whiteCircle12"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -373,7 +374,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView25"
+                        android:id="@+id/whiteCircle11"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -388,7 +389,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView23"
+                        android:id="@+id/whiteCircle9"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -403,7 +404,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView22"
+                        android:id="@+id/whiteCircle13"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -418,7 +419,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView21"
+                        android:id="@+id/whiteCircle7"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -433,7 +434,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView20"
+                        android:id="@+id/whiteCircle8"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -448,7 +449,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView19"
+                        android:id="@+id/whiteCircle6"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -463,7 +464,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView18"
+                        android:id="@+id/whiteCircle5"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -478,7 +479,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView15"
+                        android:id="@+id/whiteCircle2"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -620,7 +621,7 @@
                         app:layout_constraintGuide_percent="0.9" />
 
                     <ImageView
-                        android:id="@+id/imageView3"
+                        android:id="@+id/whiteCircle0"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -635,7 +636,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView14"
+                        android:id="@+id/whiteCircle4"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -650,7 +651,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView16"
+                        android:id="@+id/whiteCircle3"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -686,7 +687,7 @@
                         app:layout_constraintGuide_percent="0.99" />
 
                     <ImageView
-                        android:id="@+id/imageView47"
+                        android:id="@+id/whiteCircle10"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -701,7 +702,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView48"
+                        android:id="@+id/whiteCircle21"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
@@ -716,7 +717,7 @@
                         app:srcCompat="@drawable/ic_awards_ellipse" />
 
                     <ImageView
-                        android:id="@+id/imageView49"
+                        android:id="@+id/whiteCircle32"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="10dp"
