@@ -132,14 +132,8 @@ class RouletteFragment : Fragment() {
                 if (gCounter == 1) {
                     Handler(Looper.getMainLooper()).postDelayed({
                         viewModel.endCoroutine()
-                        when (HelperObject.gamesList[2]) {
-                            "find_the_letter" -> requireActivity().findNavController(R.id.fragmentContainerView)
-                                .navigate(R.id.action_rouletteFragment_to_findTheLetterFragment)
-                            "guess_the_letter" -> requireActivity().findNavController(R.id.fragmentContainerView)
-                                .navigate(R.id.action_rouletteFragment_to_guessTheLetterFragment)
-                            "slice_the_letter" -> requireActivity().findNavController(R.id.fragmentContainerView)
-                                .navigate(R.id.action_rouletteFragment_to_sliceTheLetterFragment)
-                        }
+                        requireActivity().findNavController(R.id.fragmentContainerView)
+                            .navigate(R.id.action_rouletteFragment_to_findTheLetterFragment)
                     }, 15000)
                 }
             }

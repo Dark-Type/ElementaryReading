@@ -7,6 +7,7 @@ import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
 import android.speech.SpeechRecognizer.*
+import android.util.Log
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -21,17 +22,18 @@ class SpeechRecognizer(application: Application) :
         val error: String?,
         val rmsDbChanged: Boolean = false
     )
+
     private var viewState: MutableLiveData<ViewState>? = null
     private var previousRmsdB = 0f
     private val speechRecognizer: SpeechRecognizer =
         createSpeechRecognizer(application.applicationContext).apply {
+            Log.d("test", "added recognition listener")
             setRecognitionListener(this@SpeechRecognizer)
         }
 
     private val recognizerIntent: Intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
         putExtra(RecognizerIntent.EXTRA_LANGUAGE, "ru-RU")
         putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
-        putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, application.packageName)
         putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true)
     }
 
@@ -48,14 +50,16 @@ class SpeechRecognizer(application: Application) :
         return viewState as MutableLiveData<ViewState>
     }
 
-    private fun initViewState() = ViewState(spokenText = "", isListening = false,error = null)
+    private fun initViewState() = ViewState(spokenText = "", isListening = false, error = null)
 
     fun startListening() {
+        Log.d("test", "listening started")
         speechRecognizer.startListening(recognizerIntent)
         notifyListening(isRecording = true)
     }
 
     fun stopListening() {
+        Log.d("test", "listening stopped")
         speechRecognizer.stopListening()
         notifyListening(isRecording = false)
     }
@@ -66,14 +70,33 @@ class SpeechRecognizer(application: Application) :
 
     private fun updateResults(speechBundle: Bundle?) {
         val userSaid = speechBundle?.getStringArrayList(RESULTS_RECOGNITION)
+        Log.d("test", "result update")
+
         viewState?.value =
             viewState?.value?.copy(spokenText = userSaid?.get(0) ?: "", rmsDbChanged = false)
     }
 
 
-    override fun onPartialResults(results: Bundle?) = updateResults(speechBundle = results)
-    override fun onResults(results: Bundle?) = updateResults(speechBundle = results)
-    override fun onEndOfSpeech() = notifyListening(isRecording = false)
+    override fun onPartialResults(results: Bundle?) {
+        Log.d("test", "partialResult")
+        Log.d("test",
+            (results?.getStringArrayList("android.speech.extra.UNSTABLE_TEXT").toString() + "partialResult")
+        )
+        updateResults(speechBundle = results)
+    }
+
+    override fun onResults(results: Bundle?) {
+        Log.d("test", "result")
+        Log.d("test", results?.getStringArrayList(RESULTS_RECOGNITION).toString() + "result")
+        updateResults(speechBundle = results)
+    }
+
+    override fun onEndOfSpeech() {
+        Log.d("test", "speech end")
+
+        notifyListening(isRecording = false)
+    }
+
     override fun onError(errorCode: Int) {
         viewState?.value = viewState?.value?.copy(
             error = when (errorCode) {
@@ -100,7 +123,9 @@ class SpeechRecognizer(application: Application) :
 
     private fun diffRms(newRms: Float, previousRms: Float): Int = abs(previousRms - newRms).toInt()
 
-    override fun onReadyForSpeech(p0: Bundle?) {}
+    override fun onReadyForSpeech(p0: Bundle?) {
+        Log.d("test", "ready for speech")
+    }
     override fun onBufferReceived(p0: ByteArray?) {}
     override fun onEvent(p0: Int, p1: Bundle?) {}
     override fun onBeginningOfSpeech() {}

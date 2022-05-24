@@ -2,17 +2,16 @@ package com.example.elementaryreading
 
 import android.app.Application
 import android.content.Context
-import android.media.AudioAttributes
 import android.media.MediaPlayer
-import android.net.Uri
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.*
 
 class RouletteViewModel(applicationRoulette: Application) :
     AndroidViewModel(applicationRoulette) {
     private val mediaJob = Job()
     private val mediaScope = CoroutineScope(Dispatchers.Main + mediaJob)
-    fun playCurrentLetter(currentLetterIndex: Int) = mediaScope.launch(Dispatchers.IO) {
+    fun playCurrentLetter(currentLetterIndex: Int) =viewModelScope.launch(Dispatchers.IO){
         val mMediaPlayer = MediaPlayer.create(
             getApplication(), (getApplication() as Context).resources.getIdentifier(
                 "letter$currentLetterIndex",
