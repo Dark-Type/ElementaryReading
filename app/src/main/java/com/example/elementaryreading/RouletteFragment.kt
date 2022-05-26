@@ -89,7 +89,7 @@ class RouletteFragment : Fragment() {
             Handler(Looper.getMainLooper()).postDelayed({
                 viewModel.playCurrentLetter(HelperObject.absoluteLetterList.indexOf(HelperObject.currentLetterList[HelperObject.currentLetterList.size - 1]))
             }, 3000)
-            binding.gamesRecyclerView.smoothScrollToPosition(9)
+            binding.gamesRecyclerView.smoothScrollToPosition(randomizedGamesList.size-2)
         }
         if(HelperObject.currentLetterList.size<6) {
             binding.lettersRecyclerView.addOnScrollListener(object :
