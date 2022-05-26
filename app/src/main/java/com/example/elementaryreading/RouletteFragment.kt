@@ -86,6 +86,7 @@ class RouletteFragment : Fragment() {
                 RouletteLetterRecyclerViewAdapter(lettersToShowOnRoulette)
             binding.lettersRecyclerView.smoothScrollToPosition(0)
             binding.lettersRecyclerView.smoothScrollToPosition(5)
+
             viewModel.playCurrentLetter(HelperObject.absoluteLetterList.indexOf(HelperObject.currentLetterList[HelperObject.currentLetterList.size - 1]))
             binding.gamesRecyclerView.smoothScrollToPosition(9)
         }
@@ -152,7 +153,7 @@ class RouletteFragment : Fragment() {
                 super.onScrolled(recyclerView, dx, dy)
                 gCounter++
                 if (gCounter == 1) {
-                    if (randomizedGamesList[6] == "ic_guess_the_letter") {
+                    if (randomizedGamesList[6] == "guess_the_letter") {
                         Handler(Looper.getMainLooper()).postDelayed({
                             viewModel.endCoroutine()
                             viewModel.saveLetterList()

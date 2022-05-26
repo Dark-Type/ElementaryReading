@@ -73,27 +73,27 @@ class FindTheLetterFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         if (savedInstanceState == null) {
             Handler(Looper.getMainLooper()).postDelayed({
-            viewModel.speechRecognizer.getViewState().observe(viewLifecycleOwner) { viewState ->
-                viewModel.render(viewState)
-            }
-
-
-            fun eventRender(uiOutput: FindTheLetterViewModel.Events?) {
-                if (uiOutput == null) return
-
-                if (uiOutput.endOfSpeech) {
-                    binding.micro.visibility = View.INVISIBLE
+                viewModel.speechRecognizer.getViewState().observe(viewLifecycleOwner) { viewState ->
+                    viewModel.render(viewState)
                 }
 
-                if (uiOutput.gameEnd) {
-                    roundNumber++
-                    drawRound()
-                }
 
-            }
-            viewModel.getEventLiveData().observe(viewLifecycleOwner) { eventLiveData ->
-                eventRender(eventLiveData)
-            }
+                fun eventRender(uiOutput: FindTheLetterViewModel.Events?) {
+                    if (uiOutput == null) return
+
+                    if (uiOutput.endOfSpeech) {
+                        binding.micro.visibility = View.INVISIBLE
+                    }
+
+                    if (uiOutput.gameEnd) {
+                        roundNumber++
+                        drawRound()
+                    }
+
+                }
+                viewModel.getEventLiveData().observe(viewLifecycleOwner) { eventLiveData ->
+                    eventRender(eventLiveData)
+                }
             }, 1000)
 
 
@@ -118,59 +118,59 @@ class FindTheLetterFragment : Fragment() {
         }
     }
 
-override fun onResume() {
-    super.onResume()
-    measureThisLayout(binding.background)
-    measureThisImageView(binding.findTheLetterBackground)
-    isFirstRoundDisplayed = false
-    viewModel.stopListeningFLF()
-    Handler(Looper.getMainLooper()).postDelayed({
-    drawRound()
-    }, 1000)
-}
-
-private fun drawRound() {
-    if (roundNumber == 9) {
-        requireActivity().findNavController(R.id.fragmentContainerView)
-            .navigate(R.id.action_findTheLetterFragment_to_victoryMenuFragment)
-    }
-
-    val lp = RelativeLayout.LayoutParams(300, 300)
-
-    lp.leftMargin = (0..imageWidth).random()
-    lp.topMargin = ((backgroundHeight - imageHeight) /
-            2..((backgroundHeight - imageHeight) / 2 + (imageHeight / 1.3)).toInt()).random()
-    val typeFace: Typeface? =
-        ResourcesCompat.getFont(this.requireContext(), R.font.leto_text_sans_defect)
-    with(textView) {
-        textSize = 64f
-        width = 200
-        height = 200
-        typeface = typeFace
-        layoutParams = lp
-        text = HelperObject.getRandomLetter()
-        setTextColor(Color.parseColor("#1D1686"))
-    }
-
-    binding.lettersBackground.addView(textView)
-    currentLetterIndex = HelperObject.absoluteLetterList.indexOf(textView.text)
-    viewModel.changeCurrentLetter(textView.text.toString())
-    binding.whiteBackground7.setOnClickListener {
-
-        if (viewModel.isListeningFLF()) {
-            viewModel.stopListeningFLF()
-        } else {
-            viewModel.startListeningFLF()
-            binding.micro.visibility = View.VISIBLE
-        }
-        if (viewModel.checkTheLetterFLF()) {
-
-            roundNumber++
+    override fun onResume() {
+        super.onResume()
+        measureThisLayout(binding.background)
+        measureThisImageView(binding.findTheLetterBackground)
+        isFirstRoundDisplayed = false
+        viewModel.stopListeningFLF()
+        Handler(Looper.getMainLooper()).postDelayed({
             drawRound()
+        }, 1000)
+    }
 
+    private fun drawRound() {
+        if (roundNumber == 9) {
+            requireActivity().findNavController(R.id.fragmentContainerView)
+                .navigate(R.id.action_findTheLetterFragment_to_victoryMenuFragment)
+        }
+
+        val lp = RelativeLayout.LayoutParams(300, 300)
+
+        lp.leftMargin = (0..imageWidth).random()
+        lp.topMargin = ((backgroundHeight - imageHeight) /
+                2..((backgroundHeight - imageHeight) / 2 + (imageHeight / 1.3)).toInt()).random()
+        val typeFace: Typeface? =
+            ResourcesCompat.getFont(this.requireContext(), R.font.leto_text_sans_defect)
+        with(textView) {
+            textSize = 64f
+            width = 200
+            height = 200
+            typeface = typeFace
+            layoutParams = lp
+            text = HelperObject.getRandomLetter()
+            setTextColor(Color.parseColor("#1D1686"))
+        }
+
+        binding.lettersBackground.addView(textView)
+        currentLetterIndex = HelperObject.absoluteLetterList.indexOf(textView.text)
+        viewModel.changeCurrentLetter(textView.text.toString())
+        binding.whiteBackground7.setOnClickListener {
+
+            if (viewModel.isListeningFLF()) {
+                viewModel.stopListeningFLF()
+            } else {
+                viewModel.startListeningFLF()
+                binding.micro.visibility = View.VISIBLE
+            }
+            if (viewModel.checkTheLetterFLF()) {
+
+                roundNumber++
+                drawRound()
+
+            }
         }
     }
-}
 
 
 }

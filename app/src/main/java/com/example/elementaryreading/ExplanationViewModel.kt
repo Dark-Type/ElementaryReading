@@ -9,7 +9,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-class ExplanationViewModel (applicationExp: Application) :
+class ExplanationViewModel(applicationExp: Application) :
     AndroidViewModel(applicationExp) {
     private val mediaJob = Job()
     private var mMediaPlayer = MediaPlayer()

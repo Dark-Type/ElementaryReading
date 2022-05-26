@@ -50,6 +50,7 @@ class FindTheLetterViewModel(applicationFLF: Application) :
     fun changeCurrentLetter(curL: String) {
         currentLetter = curL
     }
+
     fun startListeningFLF() {
         speechRecognizer.startListening()
     }
@@ -66,13 +67,11 @@ class FindTheLetterViewModel(applicationFLF: Application) :
         if (uiOutput == null) return
         txt = uiOutput.spokenText
         if (checkTheLetterFLF()) {
-           eventLiveData?.value =  eventLiveData?.value?.copy(gameEnd = true,endOfSpeech = true)
-        }
-      else  if (!uiOutput.isListening) {
-            eventLiveData?.value =  eventLiveData?.value?.copy(gameEnd = false,endOfSpeech = true)
-        }
-        else{
-            eventLiveData?.value =  eventLiveData?.value?.copy(gameEnd = false,endOfSpeech = false)
+            eventLiveData?.value = eventLiveData?.value?.copy(gameEnd = true, endOfSpeech = true)
+        } else if (!uiOutput.isListening) {
+            eventLiveData?.value = eventLiveData?.value?.copy(gameEnd = false, endOfSpeech = true)
+        } else {
+            eventLiveData?.value = eventLiveData?.value?.copy(gameEnd = false, endOfSpeech = false)
         }
 
     }
