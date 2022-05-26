@@ -49,10 +49,11 @@ class RouletteViewModel(applicationRoulette: Application) :
     }
 
     private fun SharedPreferences.saveList() {
-        val set: Set<String> = HashSet()
-        set.plus(HelperObject.currentLetterList)
+        val set: Set<String> = HelperObject.currentLetterList.toSet()
         edit {
             putStringSet("letterList", set)
+
+            commit()
         }
     }
 

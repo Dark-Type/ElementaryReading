@@ -8,14 +8,13 @@
         android:id="@+id/mainAnimation"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:keepScreenOn="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:keepScreenOn="true"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--        app:riveResource="@raw/off_road_car_blog"-->
+    <!--        app:riveAlignment="CENTER"-->
+    <!--        app:riveFit="CONTAIN"-->
     />
-<!--        app:riveResource="@raw/off_road_car_blog"-->
-<!--        app:riveAlignment="CENTER"-->
-<!--        app:riveFit="CONTAIN"-->
-        />
 </androidx.constraintlayout.widget.ConstraintLayout>

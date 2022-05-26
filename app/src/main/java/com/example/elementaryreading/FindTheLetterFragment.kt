@@ -27,14 +27,8 @@ class FindTheLetterFragment : Fragment() {
     private var imageWidth = 0
     private var roundNumber = 0
     private var currentLetterIndex = 0
-    private var textView = TextView(requireContext())
-        set(value) {
-            field = value
-            if (!isFirstRoundDisplayed) {
+    private lateinit var textView: TextView
 
-                isFirstRoundDisplayed = true
-            }
-        }
     private var imageHeight = 0
     private var isFirstRoundDisplayed = false
     private fun measureThisImageView(layout: ImageView) {
@@ -72,6 +66,8 @@ class FindTheLetterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (savedInstanceState == null) {
+            textView = TextView(requireContext())
+
             Handler(Looper.getMainLooper()).postDelayed({
                 viewModel.speechRecognizer.getViewState().observe(viewLifecycleOwner) { viewState ->
                     viewModel.render(viewState)
@@ -87,6 +83,7 @@ class FindTheLetterFragment : Fragment() {
 
                     if (uiOutput.gameEnd) {
                         roundNumber++
+                        (textView.parent as? ViewGroup)?.removeView(textView)
                         drawRound()
                     }
 
@@ -142,6 +139,7 @@ class FindTheLetterFragment : Fragment() {
                 2..((backgroundHeight - imageHeight) / 2 + (imageHeight / 1.3)).toInt()).random()
         val typeFace: Typeface? =
             ResourcesCompat.getFont(this.requireContext(), R.font.leto_text_sans_defect)
+
         with(textView) {
             textSize = 64f
             width = 200

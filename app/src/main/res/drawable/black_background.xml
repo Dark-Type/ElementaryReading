@@ -1,24 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- drawable/yes_no_menu.xml -->
-<vector
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><!-- drawable/yes_no_menu.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
 
     android:width="800dp"
     android:height="360dp"
     android:viewportWidth="800"
-    android:viewportHeight="360"
-    >
+    android:viewportHeight="360">
 
     <group>
 
-        <clip-path
-            android:pathData="M0 0H800V360H0V0Z"
-            />
+        <clip-path android:pathData="M0 0H800V360H0V0Z" />
 
         <path
-            android:pathData="M0 0V360H800V0"
             android:fillColor="#000000"
-            />
+            android:pathData="M0 0V360H800V0" />
 
     </group>
 

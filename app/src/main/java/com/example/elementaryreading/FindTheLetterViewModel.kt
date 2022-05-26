@@ -6,7 +6,10 @@ import android.media.MediaPlayer
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 
 
 class FindTheLetterViewModel(applicationFLF: Application) :
@@ -78,7 +81,7 @@ class FindTheLetterViewModel(applicationFLF: Application) :
 
     fun checkTheLetterFLF(): Boolean {
         if (txt != null) {
-            if (txt!!.indexOf(currentLetter, 0, false) != -1) {
+            if (txt!!.indexOf(currentLetter, 0, true) != -1) {
                 txt = null
                 return true
             }
