@@ -16,29 +16,12 @@
             app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/sliceTheLetterFragment"
-        android:name="com.example.elementaryreading.SliceTheLetterFragment"
-        android:label="SliceTheLetterFragment" >
-        <action
-            android:id="@+id/action_sliceTheLetterFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
-        <action
-            android:id="@+id/action_sliceTheLetterFragment_to_victoryMenuFragment"
-            app:destination="@id/victoryMenuFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.elementaryreading.SettingsFragment"
         android:label="SettingsFragment" >
         <action
             android:id="@+id/action_settingsFragment_to_awardsFragment"
             app:destination="@id/awardsFragment" />
-        <action
-            android:id="@+id/action_settingsFragment_to_verticalGamesFragment"
-            app:destination="@id/verticalGamesFragment" />
-        <action
-            android:id="@+id/action_settingsFragment_to_sliceTheLetterFragment"
-            app:destination="@id/sliceTheLetterFragment" />
         <action
             android:id="@+id/action_settingsFragment_to_findTheLetterFragment"
             app:destination="@id/findTheLetterFragment" />
@@ -59,17 +42,6 @@
         <action
             android:id="@+id/action_awardsFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/verticalGamesFragment"
-        android:name="com.example.elementaryreading.VerticalGamesFragment"
-        android:label="VerticalGamesFragment" >
-        <action
-            android:id="@+id/action_verticalGamesFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
-        <action
-            android:id="@+id/action_verticalGamesFragment_to_victoryMenuFragment"
-            app:destination="@id/victoryMenuFragment" />
     </fragment>
     <fragment
         android:id="@+id/victoryMenuFragment"
@@ -114,12 +86,6 @@
         <action
             android:id="@+id/action_rouletteFragment_to_findTheLetterFragment"
             app:destination="@id/findTheLetterFragment" />
-        <action
-            android:id="@+id/action_rouletteFragment_to_sliceTheLetterFragment"
-            app:destination="@id/sliceTheLetterFragment" />
-        <action
-            android:id="@+id/action_rouletteFragment_to_verticalGamesFragment"
-            app:destination="@id/verticalGamesFragment" />
     </fragment>
     <fragment
         android:id="@+id/explanationAnimation"

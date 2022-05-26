@@ -102,7 +102,7 @@ class AwardsFragment : Fragment() {
                 )
                 it.text = HelperObject.currentLetterList[j]
                 it.setOnClickListener {
-viewModel.playCurrentLetter(HelperObject.absoluteLetterList.indexOf(HelperObject.currentLetterList[j]))
+                    viewModel.playCurrentLetter(HelperObject.absoluteLetterList.indexOf(HelperObject.currentLetterList[j]))
                 }
             }
 

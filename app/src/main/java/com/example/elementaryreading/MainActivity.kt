@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding = ActivityMainBinding.inflate(layoutInflater)
-        HelperObject.animationCounter = 0
+
         val hostFragment = supportFragmentManager.findFragmentById(binding.fragmentContainerView.id)
         setContentView(binding.root)
         hostFragment?.findNavController()

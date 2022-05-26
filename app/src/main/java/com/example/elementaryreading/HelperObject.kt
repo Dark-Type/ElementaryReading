@@ -2,7 +2,7 @@ package com.example.elementaryreading
 
 object HelperObject {
     var firstTime = true
-    var animationCounter = 0
+
     val gamesList = mutableListOf(
         ("find_the_letter"),
         ("guess_the_letter")

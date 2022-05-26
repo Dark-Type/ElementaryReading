@@ -42,15 +42,17 @@ class RouletteViewModel(applicationRoulette: Application) :
     }
 
     fun recoverLetterList() {
-        HelperObject.currentLetterList = prefs.getStringSet("letterList",
-            null)?.toMutableList() ?:HelperObject.currentLetterList
+        HelperObject.currentLetterList = prefs.getStringSet(
+            "letterList",
+            null
+        )?.toMutableList() ?: HelperObject.currentLetterList
     }
 
     private fun SharedPreferences.saveList() {
         val set: Set<String> = HashSet()
         set.plus(HelperObject.currentLetterList)
         edit {
-            putStringSet("letterList",set)
+            putStringSet("letterList", set)
         }
     }
 
@@ -98,7 +100,7 @@ class RouletteViewModel(applicationRoulette: Application) :
 
     fun randomizeGame(listToRandomize: MutableList<String>): MutableList<String> {
         val result = listToRandomize[(0..1).random()]
-        for(i in 0..8){
+        for (i in 0..8) {
             listToRandomize.add(result)
         }
         return listToRandomize
