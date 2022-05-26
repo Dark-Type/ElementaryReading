@@ -2,16 +2,21 @@ package com.example.elementaryreading
 
 import android.app.Application
 import android.content.Context
+import android.content.Context.MODE_PRIVATE
+import android.content.SharedPreferences
 import android.media.MediaPlayer
+import androidx.core.content.edit
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.*
 
+
 class RouletteViewModel(applicationRoulette: Application) :
     AndroidViewModel(applicationRoulette) {
+    private lateinit var prefs: SharedPreferences
     private val mediaJob = Job()
     private val mediaScope = CoroutineScope(Dispatchers.Main + mediaJob)
-    fun playCurrentLetter(currentLetterIndex: Int) =viewModelScope.launch(Dispatchers.IO){
+    fun playCurrentLetter(currentLetterIndex: Int) = viewModelScope.launch(Dispatchers.IO) {
         val mMediaPlayer = MediaPlayer.create(
             getApplication(), (getApplication() as Context).resources.getIdentifier(
                 "letter$currentLetterIndex",
@@ -26,6 +31,29 @@ class RouletteViewModel(applicationRoulette: Application) :
     fun endCoroutine() {
         mediaScope.cancel()
     }
+
+    fun initSharedPref(context: Context) {
+        prefs = context.getSharedPreferences("SP", MODE_PRIVATE)
+    }
+
+    fun saveLetterList() {
+        prefs.saveList()
+
+    }
+
+    fun recoverLetterList() {
+        HelperObject.currentLetterList = prefs.getStringSet("letterList",
+            null)?.toMutableList() ?:HelperObject.currentLetterList
+    }
+
+    private fun SharedPreferences.saveList() {
+        val set: Set<String> = HashSet()
+        set.plus(HelperObject.currentLetterList)
+        edit {
+            putStringSet("letterList",set)
+        }
+    }
+
     fun addRandomLetterToCurrentList(): String {
         addRandomLetterToList(HelperObject.currentLetterList)
         if (HelperObject.currentLetterList.size == 0) {
@@ -44,7 +72,8 @@ class RouletteViewModel(applicationRoulette: Application) :
             addRandomLetterToList(listToFill)
         }
     }
-    fun generateLettersToShowOnRouletteFIRST(listToFill: MutableList<String>){
+
+    fun generateLettersToShowOnRouletteFIRST(listToFill: MutableList<String>) {
         if (HelperObject.currentLetterList.size > 28) {
             for (i in 0..33 - HelperObject.currentLetterList.size) {
                 addRandomLetterToList(listToFill)
@@ -57,7 +86,8 @@ class RouletteViewModel(applicationRoulette: Application) :
     }
 
     private fun addRandomLetterToList(listToFill: MutableList<String>) {
-        val local: String = EveryLetter.values()[(0 until EveryLetter.values().size).random()].letter
+        val local: String =
+            EveryLetter.values()[(0 until EveryLetter.values().size).random()].letter
         if (HelperObject.currentLetterList.indexOf(local) == -1) {
             listToFill.add(local)
             return
@@ -66,15 +96,12 @@ class RouletteViewModel(applicationRoulette: Application) :
         }
     }
 
-    fun randomizeGame(listToRandomize: MutableList<String>) {
-        val result = listToRandomize[(0..2).random()]
-        if (listToRandomize.size == 3) {
-            listToRandomize[2] = result
-        } else {
+    fun randomizeGame(listToRandomize: MutableList<String>): MutableList<String> {
+        val result = listToRandomize[(0..1).random()]
+        for(i in 0..8){
             listToRandomize.add(result)
         }
-
-
+        return listToRandomize
     }
 
 

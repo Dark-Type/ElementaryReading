@@ -11,12 +11,13 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.elementaryreading.databinding.FragmentAwardsBinding
 
 
 class AwardsFragment : Fragment() {
     private lateinit var binding: FragmentAwardsBinding
-
+    private val viewModel: AwardsViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -100,6 +101,9 @@ class AwardsFragment : Fragment() {
                     }"
                 )
                 it.text = HelperObject.currentLetterList[j]
+                it.setOnClickListener {
+viewModel.playCurrentLetter(HelperObject.absoluteLetterList.indexOf(HelperObject.currentLetterList[j]))
+                }
             }
 
 

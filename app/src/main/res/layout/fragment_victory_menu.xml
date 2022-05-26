@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
-    <!-- Yes/No menu -->
+
 
     <View
         android:id="@+id/victory_menu"
@@ -19,6 +19,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:keepScreenOn="true"
         app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.card.MaterialCardView

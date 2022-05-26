@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/rouletteFragment">
+    app:startDestination="@id/explanationAnimation">
 
     <fragment
         android:id="@+id/findTheLetterFragment"
@@ -48,6 +48,9 @@
         <action
             android:id="@+id/action_settingsFragment_to_guessTheLetterFragment2"
             app:destination="@id/guessTheLetterFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_explanationAnimation"
+            app:destination="@id/explanationAnimation" />
     </fragment>
     <fragment
         android:id="@+id/awardsFragment"
@@ -97,6 +100,9 @@
         <action
             android:id="@+id/action_yesNoMenuFragment_to_rouletteFragment"
             app:destination="@id/rouletteFragment" />
+        <action
+            android:id="@+id/action_yesNoMenuFragment_to_explanationAnimation"
+            app:destination="@id/explanationAnimation" />
     </fragment>
     <fragment
         android:id="@+id/rouletteFragment"
@@ -114,5 +120,19 @@
         <action
             android:id="@+id/action_rouletteFragment_to_verticalGamesFragment"
             app:destination="@id/verticalGamesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/explanationAnimation"
+        android:name="com.example.elementaryreading.ExplanationAnimationFragment"
+        android:label="ExplanationAnimation" >
+        <action
+            android:id="@+id/action_explanationAnimation_to_rouletteFragment"
+            app:destination="@id/rouletteFragment" />
+        <action
+            android:id="@+id/action_explanationAnimation_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_explanationAnimation_to_yesNoMenuFragment"
+            app:destination="@id/yesNoMenuFragment" />
     </fragment>
 </navigation>

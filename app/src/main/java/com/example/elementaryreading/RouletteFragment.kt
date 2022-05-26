@@ -1,5 +1,6 @@
 package com.example.elementaryreading
 
+
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -19,6 +20,7 @@ class RouletteFragment : Fragment() {
     private val viewModel: RouletteViewModel by viewModels()
     private var counter = 0
     private var gCounter = 0
+    private var randomizedGamesList = mutableListOf<String>()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -32,13 +34,17 @@ class RouletteFragment : Fragment() {
             view
         }
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (savedInstanceState == null) {
         }
     }
+
     override fun onResume() {
         super.onResume()
+        viewModel.initSharedPref(requireContext())
+        viewModel.recoverLetterList()
         val lettersToShowOnRoulette = mutableListOf<String>()
         binding.lettersRecyclerView.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
@@ -49,9 +55,9 @@ class RouletteFragment : Fragment() {
         val disabler: RecyclerView.OnItemTouchListener = RecyclerViewDisabler()
         binding.lettersRecyclerView.addOnItemTouchListener(disabler)
         binding.gamesRecyclerView.addOnItemTouchListener(disabler)
-        viewModel.randomizeGame(HelperObject.gamesList)
-        if (HelperObject.firstTime) {
-            HelperObject.firstTime = false
+       randomizedGamesList = viewModel.randomizeGame(HelperObject.gamesList)
+        if (HelperObject.currentLetterList.size < 2) {
+
             viewModel.generateLettersToShowOnRouletteFIRST(lettersToShowOnRoulette)
             for (i in 1..5) {
                 viewModel.addRandomLetterToCurrentList()
@@ -66,22 +72,22 @@ class RouletteFragment : Fragment() {
             }, 3000)
             Handler(Looper.getMainLooper()).postDelayed({
                 binding.gamesRecyclerView.adapter =
-                    RouletteGameRecyclerViewAdapter(HelperObject.gamesList)
-                binding.gamesRecyclerView.smoothScrollToPosition(3)
-            }, 3000)
+                    RouletteGameRecyclerViewAdapter(randomizedGamesList)
+                binding.gamesRecyclerView.smoothScrollToPosition(9)
+            }, 1000)
         } else {
             viewModel.addRandomLetterToCurrentList()
             viewModel.generateLettersToShowOnRoulette(lettersToShowOnRoulette)
             lettersToShowOnRoulette.add(HelperObject.currentLetterList[HelperObject.currentLetterList.size - 1])
             binding.gamesRecyclerView.adapter =
-                RouletteGameRecyclerViewAdapter(HelperObject.gamesList)
+                RouletteGameRecyclerViewAdapter(randomizedGamesList)
             binding.gamesRecyclerView.smoothScrollToPosition(0)
             binding.lettersRecyclerView.adapter =
                 RouletteLetterRecyclerViewAdapter(lettersToShowOnRoulette)
             binding.lettersRecyclerView.smoothScrollToPosition(0)
             binding.lettersRecyclerView.smoothScrollToPosition(5)
-            viewModel.playCurrentLetter(HelperObject.absoluteLetterList.indexOf(HelperObject.currentLetterList[HelperObject.currentLetterList.size-1]))
-            binding.gamesRecyclerView.smoothScrollToPosition(3)
+            viewModel.playCurrentLetter(HelperObject.absoluteLetterList.indexOf(HelperObject.currentLetterList[HelperObject.currentLetterList.size - 1]))
+            binding.gamesRecyclerView.smoothScrollToPosition(9)
         }
         binding.lettersRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
@@ -92,28 +98,44 @@ class RouletteFragment : Fragment() {
                         Handler(Looper.getMainLooper()).postDelayed({
                             viewModel.endCoroutine()
                             binding.lettersRecyclerView.smoothScrollToPosition(10)
-                            viewModel.playCurrentLetter(HelperObject.absoluteLetterList.indexOf(HelperObject.currentLetterList[1]))
+                            viewModel.playCurrentLetter(
+                                HelperObject.absoluteLetterList.indexOf(
+                                    HelperObject.currentLetterList[1]
+                                )
+                            )
                         }, 3000)
                     }
                     8 -> {
                         Handler(Looper.getMainLooper()).postDelayed({
                             viewModel.endCoroutine()
                             binding.lettersRecyclerView.smoothScrollToPosition(15)
-                            viewModel.playCurrentLetter(HelperObject.absoluteLetterList.indexOf(HelperObject.currentLetterList[2]))
+                            viewModel.playCurrentLetter(
+                                HelperObject.absoluteLetterList.indexOf(
+                                    HelperObject.currentLetterList[2]
+                                )
+                            )
                         }, 3000)
                     }
                     13 -> {
                         Handler(Looper.getMainLooper()).postDelayed({
                             viewModel.endCoroutine()
                             binding.lettersRecyclerView.smoothScrollToPosition(20)
-                            viewModel.playCurrentLetter(HelperObject.absoluteLetterList.indexOf(HelperObject.currentLetterList[3]))
+                            viewModel.playCurrentLetter(
+                                HelperObject.absoluteLetterList.indexOf(
+                                    HelperObject.currentLetterList[3]
+                                )
+                            )
                         }, 5000)
                     }
                     18 -> {
                         Handler(Looper.getMainLooper()).postDelayed({
                             viewModel.endCoroutine()
                             binding.lettersRecyclerView.smoothScrollToPosition(25)
-                            viewModel.playCurrentLetter(HelperObject.absoluteLetterList.indexOf(HelperObject.currentLetterList[4]))
+                            viewModel.playCurrentLetter(
+                                HelperObject.absoluteLetterList.indexOf(
+                                    HelperObject.currentLetterList[4]
+                                )
+                            )
                         }, 7000)
 
                     }
@@ -130,11 +152,21 @@ class RouletteFragment : Fragment() {
                 super.onScrolled(recyclerView, dx, dy)
                 gCounter++
                 if (gCounter == 1) {
-                    Handler(Looper.getMainLooper()).postDelayed({
-                        viewModel.endCoroutine()
-                        requireActivity().findNavController(R.id.fragmentContainerView)
-                            .navigate(R.id.action_rouletteFragment_to_findTheLetterFragment)
-                    }, 15000)
+                    if (randomizedGamesList[6] == "ic_guess_the_letter") {
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            viewModel.endCoroutine()
+                            viewModel.saveLetterList()
+                            requireActivity().findNavController(R.id.fragmentContainerView)
+                                .navigate(R.id.action_rouletteFragment_to_guessTheLetterFragment)
+                        }, 15000)
+                    } else {
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            viewModel.endCoroutine()
+                            viewModel.saveLetterList()
+                            requireActivity().findNavController(R.id.fragmentContainerView)
+                                .navigate(R.id.action_rouletteFragment_to_findTheLetterFragment)
+                        }, 15000)
+                    }
                 }
             }
         })

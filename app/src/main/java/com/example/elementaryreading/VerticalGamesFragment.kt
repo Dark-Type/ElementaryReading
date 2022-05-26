@@ -33,7 +33,7 @@ class VerticalGamesFragment : Fragment() {
 
             }
             binding.imageButton7.setOnClickListener {
-   requireActivity().findNavController(R.id.fragmentContainerView)
+                requireActivity().findNavController(R.id.fragmentContainerView)
                     .navigate(R.id.action_verticalGamesFragment_to_settingsFragment)
             }
             binding.imageButton9.setOnClickListener {

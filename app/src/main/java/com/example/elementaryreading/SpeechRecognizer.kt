@@ -79,8 +79,10 @@ class SpeechRecognizer(application: Application) :
 
     override fun onPartialResults(results: Bundle?) {
         Log.d("test", "partialResult")
-        Log.d("test",
-            (results?.getStringArrayList("android.speech.extra.UNSTABLE_TEXT").toString() + "partialResult")
+        Log.d(
+            "test",
+            (results?.getStringArrayList("android.speech.extra.UNSTABLE_TEXT")
+                .toString() + "partialResult")
         )
         updateResults(speechBundle = results)
     }
@@ -126,6 +128,7 @@ class SpeechRecognizer(application: Application) :
     override fun onReadyForSpeech(p0: Bundle?) {
         Log.d("test", "ready for speech")
     }
+
     override fun onBufferReceived(p0: ByteArray?) {}
     override fun onEvent(p0: Int, p1: Bundle?) {}
     override fun onBeginningOfSpeech() {}

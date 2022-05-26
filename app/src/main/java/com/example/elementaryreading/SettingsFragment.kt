@@ -35,7 +35,8 @@ class SettingsFragment : Fragment() {
                     .navigate(R.id.action_settingsFragment_to_awardsFragment)
             }
             binding.imageButton5.setOnClickListener {
-                //play explanation
+                requireActivity().findNavController(R.id.fragmentContainerView)
+                    .navigate(R.id.action_settingsFragment_to_explanationAnimation)
             }
 
             binding.imageButton6.setOnClickListener {
