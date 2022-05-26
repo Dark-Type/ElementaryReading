@@ -123,7 +123,7 @@ class ExplanationAnimationFragment : Fragment() {
                     autoplay = true
 
                 )
-            }, 43000)
+            }, 53000)
 
             Handler(Looper.getMainLooper()).postDelayed({
                 if (HelperObject.firstTime) {

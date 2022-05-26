@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
     private val readExternalPermissionContract =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isPermissionAccepted ->
             if (!isPermissionAccepted) {
-                //set animation?
                 val mJob = Job()
                 val mScope = CoroutineScope(Dispatchers.Main + mJob)
                 fun playHatefulSpeech() = mScope.launch(Dispatchers.IO) {
