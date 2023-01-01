@@ -127,7 +127,6 @@ class GuessTheLetterFragment : Fragment() {
                     .setOnClickListener {
                         binding.mainBackground.findViewWithTag<TextView>("view$j")
                             .setOnClickListener(null)
-                        viewModel.endCoroutine()
                         drawRound(roundNumber + 1)
                     }
             } else {

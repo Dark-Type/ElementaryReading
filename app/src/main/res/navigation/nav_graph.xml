@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/findTheLetterFragment"
         android:name="com.example.elementaryreading.FindTheLetterFragment"
-        android:label="FindTheLetterFragment" >
+        android:label="FindTheLetterFragment">
         <action
             android:id="@+id/action_findTheLetterFragment_to_victoryMenuFragment"
             app:destination="@id/victoryMenuFragment" />
@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.elementaryreading.SettingsFragment"
-        android:label="SettingsFragment" >
+        android:label="SettingsFragment">
         <action
             android:id="@+id/action_settingsFragment_to_awardsFragment"
             app:destination="@id/awardsFragment" />
@@ -38,7 +38,7 @@
     <fragment
         android:id="@+id/awardsFragment"
         android:name="com.example.elementaryreading.AwardsFragment"
-        android:label="AwardsFragment" >
+        android:label="AwardsFragment">
         <action
             android:id="@+id/action_awardsFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
@@ -46,7 +46,7 @@
     <fragment
         android:id="@+id/victoryMenuFragment"
         android:name="com.example.elementaryreading.VictoryMenuFragment"
-        android:label="VictoryMenuFragment" >
+        android:label="VictoryMenuFragment">
         <action
             android:id="@+id/action_victoryMenuFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
@@ -57,7 +57,7 @@
     <fragment
         android:id="@+id/guessTheLetterFragment"
         android:name="com.example.elementaryreading.GuessTheLetterFragment"
-        android:label="GuessTheLetterFragment" >
+        android:label="GuessTheLetterFragment">
         <action
             android:id="@+id/action_guessTheLetterFragment_to_victoryMenuFragment"
             app:destination="@id/victoryMenuFragment" />
@@ -68,7 +68,7 @@
     <fragment
         android:id="@+id/yesNoMenuFragment"
         android:name="com.example.elementaryreading.YesNoMenuFragment"
-        android:label="YesNoMenuFragment" >
+        android:label="YesNoMenuFragment">
         <action
             android:id="@+id/action_yesNoMenuFragment_to_rouletteFragment"
             app:destination="@id/rouletteFragment" />
@@ -79,7 +79,7 @@
     <fragment
         android:id="@+id/rouletteFragment"
         android:name="com.example.elementaryreading.RouletteFragment"
-        android:label="RouletteFragment" >
+        android:label="RouletteFragment">
         <action
             android:id="@+id/action_rouletteFragment_to_guessTheLetterFragment"
             app:destination="@id/guessTheLetterFragment" />
@@ -90,7 +90,7 @@
     <fragment
         android:id="@+id/explanationAnimation"
         android:name="com.example.elementaryreading.ExplanationAnimationFragment"
-        android:label="ExplanationAnimation" >
+        android:label="ExplanationAnimation">
         <action
             android:id="@+id/action_explanationAnimation_to_rouletteFragment"
             app:destination="@id/rouletteFragment" />

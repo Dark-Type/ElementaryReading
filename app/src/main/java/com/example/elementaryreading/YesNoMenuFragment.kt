@@ -1,7 +1,5 @@
 package com.example.elementaryreading
 
-import android.content.Context
-import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,10 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.example.elementaryreading.databinding.FragmentYesNoMenuBinding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
 
 class YesNoMenuFragment : Fragment() {
     private lateinit var binding: FragmentYesNoMenuBinding

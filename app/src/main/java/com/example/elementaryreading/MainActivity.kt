@@ -28,13 +28,12 @@ class MainActivity : AppCompatActivity() {
     private val readExternalPermissionContract =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isPermissionAccepted ->
             if (!isPermissionAccepted) {
-                //set animation?
                 val mJob = Job()
                 val mScope = CoroutineScope(Dispatchers.Main + mJob)
                 fun playHatefulSpeech() = mScope.launch(Dispatchers.IO) {
                     val mMediaPlayer = MediaPlayer.create(
                         application, (application as Context).resources.getIdentifier(
-                            "permission_denied",
+                            "hateful_speech",
                             "raw",
                             (application as Context).packageName
                         )
@@ -79,8 +78,8 @@ class MainActivity : AppCompatActivity() {
 
         val hostFragment = supportFragmentManager.findFragmentById(binding.fragmentContainerView.id)
         setContentView(binding.root)
-        hostFragment?.findNavController()
-            ?.navigate(R.id.action_explanationAnimation_to_rouletteFragment)
+//        hostFragment?.findNavController()
+//            ?.navigate(R.id.action_explanationAnimation_to_rouletteFragment)
     }
 
 
