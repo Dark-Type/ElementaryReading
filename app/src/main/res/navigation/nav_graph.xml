@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/explanationAnimation">
+
+    <fragment
+        android:id="@+id/findTheLetterFragment"
+        android:name="com.example.elementaryreading.fragments.findTheLetterFragment.FindTheLetterFragment"
+        android:label="FindTheLetterFragment">
+        <action
+            android:id="@+id/action_findTheLetterFragment_to_victoryMenuFragment"
+            app:destination="@id/victoryMenuFragment" />
+        <action
+            android:id="@+id/action_findTheLetterFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.elementaryreading.fragments.settingsFragment.SettingsFragment"
+        android:label="SettingsFragment">
+        <action
+            android:id="@+id/action_settingsFragment_to_awardsFragment"
+            app:destination="@id/awardsFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_findTheLetterFragment"
+            app:destination="@id/findTheLetterFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_findTheLetterFragment2"
+            app:destination="@id/findTheLetterFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_guessTheLetterFragment2"
+            app:destination="@id/guessTheLetterFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_explanationAnimation"
+            app:destination="@id/explanationAnimation" />
+    </fragment>
+    <fragment
+        android:id="@+id/awardsFragment"
+        android:name="com.example.elementaryreading.fragments.awardsFragment.AwardsFragment"
+        android:label="AwardsFragment">
+        <action
+            android:id="@+id/action_awardsFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/victoryMenuFragment"
+        android:name="com.example.elementaryreading.fragments.victoryFragment.VictoryMenuFragment"
+        android:label="VictoryMenuFragment">
+        <action
+            android:id="@+id/action_victoryMenuFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_victoryMenuFragment_to_yesNoMenuFragment"
+            app:destination="@id/yesNoMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/guessTheLetterFragment"
+        android:name="com.example.elementaryreading.fragments.guessTheLetterFragment.GuessTheLetterFragment"
+        android:label="GuessTheLetterFragment">
+        <action
+            android:id="@+id/action_guessTheLetterFragment_to_victoryMenuFragment"
+            app:destination="@id/victoryMenuFragment" />
+        <action
+            android:id="@+id/action_guessTheLetterFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/yesNoMenuFragment"
+        android:name="com.example.elementaryreading.fragments.yesNoFragment.YesNoMenuFragment"
+        android:label="YesNoMenuFragment">
+        <action
+            android:id="@+id/action_yesNoMenuFragment_to_rouletteFragment"
+            app:destination="@id/rouletteFragment" />
+        <action
+            android:id="@+id/action_yesNoMenuFragment_to_explanationAnimation"
+            app:destination="@id/explanationAnimation" />
+    </fragment>
+    <fragment
+        android:id="@+id/rouletteFragment"
+        android:name="com.example.elementaryreading.fragments.rouletteFragment.RouletteFragment"
+        android:label="RouletteFragment">
+        <action
+            android:id="@+id/action_rouletteFragment_to_guessTheLetterFragment"
+            app:destination="@id/guessTheLetterFragment" />
+        <action
+            android:id="@+id/action_rouletteFragment_to_findTheLetterFragment"
+            app:destination="@id/findTheLetterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/explanationAnimation"
+        android:name="com.example.elementaryreading.fragments.explanationFragment.ExplanationAnimationFragment"
+        android:label="ExplanationAnimation">
+        <action
+            android:id="@+id/action_explanationAnimation_to_rouletteFragment"
+            app:destination="@id/rouletteFragment" />
+        <action
+            android:id="@+id/action_explanationAnimation_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_explanationAnimation_to_yesNoMenuFragment"
+            app:destination="@id/yesNoMenuFragment" />
+    </fragment>
+</navigation>

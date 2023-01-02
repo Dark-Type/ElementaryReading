@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+
+    <View
+        android:id="@+id/find_the_letter_1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/black_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="#1D1686"
+        android:keepScreenOn="true"
+        app:cardCornerRadius="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/whiteBackground7"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/guessTheLetterHorizontalGuidline3"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/guessTheLetterVerticalGuidline7"
+                app:layout_constraintStart_toStartOf="@+id/guessTheLetterVerticalGuidline6"
+                app:layout_constraintTop_toTopOf="@+id/guessTheLetterHorizontalGuidline2"
+                app:srcCompat="@drawable/ic_guess_the_letter_rect" />
+
+            <ImageButton
+                android:id="@+id/imageButton7"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@null"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toTopOf="@+id/guideline73"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/guideline88"
+                app:layout_constraintStart_toStartOf="@+id/guideline87"
+                app:layout_constraintTop_toTopOf="@+id/guideline74"
+                app:srcCompat="@drawable/ic_real_play_button" />
+
+            <ImageButton
+                android:id="@+id/imageButton8"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@null"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toTopOf="@+id/guideline76"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/guideline88"
+                app:layout_constraintStart_toStartOf="@+id/guideline87"
+                app:layout_constraintTop_toTopOf="@+id/guideline75"
+                app:srcCompat="@drawable/ic_real_settings_button" />
+
+            <ImageButton
+                android:id="@+id/imageButton9"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@null"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toTopOf="@+id/guideline78"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/guideline88"
+                app:layout_constraintStart_toStartOf="@+id/guideline87"
+                app:layout_constraintTop_toTopOf="@+id/guideline77"
+                app:srcCompat="@drawable/ic_real_rerun_button" />
+
+            <ImageView
+                android:id="@+id/whiteBackground3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/guessTheLetterHorizontalGuidline1"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/guessTheLetterVerticalGuidline7"
+                app:layout_constraintStart_toStartOf="@+id/guessTheLetterVerticalGuidline6"
+                app:layout_constraintTop_toTopOf="@+id/guessTheLetterHorizontalGuidline0"
+                app:srcCompat="@drawable/ic_guess_the_letter_rect" />
+
+            <ImageView
+                android:id="@+id/whiteBackground2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/guessTheLetterHorizontalGuidline1"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/guessTheLetterVerticalGuidline5"
+                app:layout_constraintStart_toStartOf="@+id/guessTheLetterVerticalGuidline4"
+                app:layout_constraintTop_toTopOf="@+id/guessTheLetterHorizontalGuidline0"
+                app:srcCompat="@drawable/ic_guess_the_letter_rect" />
+
+            <ImageView
+                android:id="@+id/whiteBackground6"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/guessTheLetterHorizontalGuidline3"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/guessTheLetterVerticalGuidline5"
+                app:layout_constraintStart_toStartOf="@+id/guessTheLetterVerticalGuidline4"
+                app:layout_constraintTop_toTopOf="@+id/guessTheLetterHorizontalGuidline2"
+                app:srcCompat="@drawable/ic_guess_the_letter_rect" />
+
+            <ImageView
+                android:id="@+id/whiteBackground1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/guessTheLetterHorizontalGuidline1"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/guessTheLetterVerticalGuidline3"
+                app:layout_constraintStart_toStartOf="@+id/guessTheLetterVerticalGuidline2"
+                app:layout_constraintTop_toTopOf="@+id/guessTheLetterHorizontalGuidline0"
+                app:srcCompat="@drawable/ic_guess_the_letter_rect" />
+
+            <ImageView
+                android:id="@+id/whiteBackground5"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/guessTheLetterHorizontalGuidline3"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/guessTheLetterVerticalGuidline3"
+                app:layout_constraintStart_toStartOf="@+id/guessTheLetterVerticalGuidline2"
+                app:layout_constraintTop_toTopOf="@+id/guessTheLetterHorizontalGuidline2"
+                app:srcCompat="@drawable/ic_guess_the_letter_rect" />
+
+            <ImageView
+                android:id="@+id/whiteBackground4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/guessTheLetterHorizontalGuidline3"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/guessTheLetterVerticalGuidline1"
+                app:layout_constraintStart_toStartOf="@+id/guessTheLetterVerticalGuidline0"
+                app:layout_constraintTop_toTopOf="@+id/guessTheLetterHorizontalGuidline2"
+                app:srcCompat="@drawable/ic_guess_the_letter_rect" />
+
+            <ImageView
+                android:id="@+id/whiteBackground0"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/guessTheLetterHorizontalGuidline1"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/guessTheLetterVerticalGuidline1"
+                app:layout_constraintStart_toStartOf="@+id/guessTheLetterVerticalGuidline0"
+                app:layout_constraintTop_toTopOf="@+id/guessTheLetterHorizontalGuidline0"
+                app:srcCompat="@drawable/ic_guess_the_letter_rect" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guessTheLetterHorizontalGuidline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guessTheLetterHorizontalGuidline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.56" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guessTheLetterHorizontalGuidline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.44" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guessTheLetterHorizontalGuidline0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline73"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.275" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline74"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.085" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline75"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.4" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline76"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.595" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline77"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.72" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline78"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.915" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guessTheLetterVerticalGuidline0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.025" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guessTheLetterVerticalGuidline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.17" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guessTheLetterVerticalGuidline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.255" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guessTheLetterVerticalGuidline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.4" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guessTheLetterVerticalGuidline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.485" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guessTheLetterVerticalGuidline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.63" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guessTheLetterVerticalGuidline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.715" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guessTheLetterVerticalGuidline7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.86" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline87"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.885" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline88"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.975" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

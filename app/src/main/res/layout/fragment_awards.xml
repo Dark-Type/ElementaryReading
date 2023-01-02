@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/yes_button"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+
+    <View
+        android:id="@+id/awards"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/black_background"
+        android:keepScreenOn="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="#1D1686"
+        app:cardCornerRadius="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:cardBackgroundColor="#FFB64A"
+                app:cardCornerRadius="60dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline114"
+                app:layout_constraintStart_toStartOf="@+id/awardsVertical0"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/awardsBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/whiteCircle1"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal1"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical2"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical1"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal0"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/imageView45"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal5"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline113"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical10"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal4"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle31"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal5"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical10"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical9"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal4"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle30"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal5"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical9"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical8"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal4"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle29"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal5"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical8"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical7"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal4"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle28"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal5"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical7"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical6"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal4"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle27"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal5"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical6"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical5"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal4"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle26"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal5"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical5"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical4"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal4"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle25"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal5"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical4"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical3"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal4"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle24"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal5"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical3"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical2"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal4"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle23"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal5"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical2"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical1"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal4"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/imageView35"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal3"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline113"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical10"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal2"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle22"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal5"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal4"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle20"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal3"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical10"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical9"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal2"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle18"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal3"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical8"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical7"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal2"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle17"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal3"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical7"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical6"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal2"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle19"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal3"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical9"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical8"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal2"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle16"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal3"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical6"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical5"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal2"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle15"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal3"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical5"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical4"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal2"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle14"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal3"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical4"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical3"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal2"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle12"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal3"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical2"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical1"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal2"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle11"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal3"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal2"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle9"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal1"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical10"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical9"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal0"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle13"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal3"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical3"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical2"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal2"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle7"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal1"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical8"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical7"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal0"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle8"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal1"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical9"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical8"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal0"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle6"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal1"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical7"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical6"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal0"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle5"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal1"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical6"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical5"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal0"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle2"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal1"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical3"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical2"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal0"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/awardsHorizontal1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.3" />
+
+                    <ImageView
+                        android:id="@+id/imageView24"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal1"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline113"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical10"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal0"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/awardsHorizontal0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.05" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/awardsHorizontal2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.4" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/awardsHorizontal3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.6" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/awardsHorizontal4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.7" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/awardsHorizontal5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.9" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/awardsVertical1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.09" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/awardsVertical2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.18" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/awardsVertical3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.27" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/awardsVertical4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.36" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/awardsVertical5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.45" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/awardsVertical6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.54" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/awardsVertical7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.63" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/awardsVertical8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.72" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/awardsVertical9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.81" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/awardsVertical10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.9" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle0"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal1"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal0"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle4"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal1"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical5"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical4"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal0"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle3"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal1"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical4"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical3"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal0"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline111"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="1188dp" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline113"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.99" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/awardsVertical11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.99" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle10"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal1"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical11"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical10"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal0"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle21"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal3"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical11"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical10"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal2"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                    <ImageView
+                        android:id="@+id/whiteCircle32"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/awardsHorizontal5"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/awardsVertical11"
+                        app:layout_constraintStart_toStartOf="@+id/awardsVertical10"
+                        app:layout_constraintTop_toTopOf="@+id/awardsHorizontal4"
+                        app:srcCompat="@drawable/ic_awards_ellipse" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/awardsVertical0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline114"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
